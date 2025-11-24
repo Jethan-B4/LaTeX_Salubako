@@ -1,0 +1,40 @@
+% references.bib - Sample Bibliography File
+
+@book{lamport1994,
+  title={LaTeX: A Document Preparation System},
+  author={Lamport, Leslie},
+  year={1994},
+  publisher={Addison-Wesley}
+}
+
+@article{doe2020,
+  title={A Study on Lorem Ipsum in Academic Research},
+  author={Doe, John and Smith, Jane},
+  journal={Journal of Sample Research},
+  volume={10},
+  number={2},
+  pages={15-30},
+  year={2020},
+  publisher={Sample Publisher}
+}
+
+@misc{online2025,
+  author = {OpenAI},
+  title = {LaTeX Templates for Research},
+  year = {2025},
+  howpublished = {\url{https://www.openai.com}}
+}
+
+@book{imperial2016,
+    author = {Fritz Imperial},
+    title = "Sample Book Title Only",
+    publisher = "Rex Publishing, Inc.",
+    year = {2016}
+}
+
+@book{zaleta2025,
+    author = {Jericho Zaleta},
+    title = "Sample Book Title Only",
+    publisher = "Rex Publishing, Inc.",
+    year = {2016}
+}
