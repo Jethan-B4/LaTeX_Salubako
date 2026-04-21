@@ -30,17 +30,17 @@
 \widowpenalty=10000
 \displaywidowpenalty=10000
 
-% Chapter formatting (remove 'Chapter' word)
+% Chapter formatting — matches TestX template:
+%   numbered, left-aligned, normal (not bold), Large size
 \usepackage{titlesec}
-\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\thechapter}{1em}{}
+\titleformat{\chapter}[hang]{\Large\normalfont}{\thechapter}{1em}{}
 
 % TOC formatting
 \usepackage{tocloft}
 \setlength{\cftbeforechapskip}{1em}
 
 % References
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
-\addbibresource{references.bib}
+\usepackage[numbers,sort&compress]{natbib}
 
 % Title Page Command
 \newcommand{\researchtitlepage}{%
@@ -63,3 +63,43 @@
 % Paragraph formatting
 \setlength{\parskip}{6pt}
 \setlength{\parindent}{0.5in}
+
+% --- Precise Spacing Control ---
+
+% Section/subsection formatting — matches TestX template (normal weight, left-aligned)
+\titleformat{\section}[hang]{\normalsize\normalfont}{\thesection}{1em}{}
+\titleformat{\subsection}[hang]{\normalsize\normalfont}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalsize\normalfont}{\thesubsubsection}{1em}{}
+
+% \titlespacing*{command}{left}{before-sep}{after-sep}
+
+% 1. Chapter Spacing
+\titlespacing*{\chapter}{0pt}{-30pt}{6pt}
+
+% 2. Section Spacing
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+% 3. Subsection Spacing
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+
+
+
+
+% Table of Contents Reduce Spaces
+\usepackage{tocloft}
+% Space before "Contents" title
+\setlength{\cftbeforetoctitleskip}{0pt}
+% Space after "Contents" title
+\setlength{\cftaftertoctitleskip}{10pt}
+
+
+
+% List of Figures Reduce Spaces
+\usepackage{tocloft}
+% Space before "List of Figures" title
+\setlength{\cftbeforeloftitleskip}{5pt}
+% Space after "List of Figures" title
+\setlength{\cftafterloftitleskip}{5pt}
+\setlength{\cftbeforelottitleskip}{5pt}
+\setlength{\cftafterlottitleskip}{5pt}
