@@ -1,40 +1,628 @@
-% references.bib - Sample Bibliography File
+% references.bib - Project Salubako Bibliography
 
-@book{lamport1994,
-  title={LaTeX: A Document Preparation System},
-  author={Lamport, Leslie},
-  year={1994},
-  publisher={Addison-Wesley}
+@article{zhang2024,
+  author    = {Zhang, R. and Huang, Q. and Luo, J. and Xu, J. and Pan, Y.},
+  title     = {Enhancing user participation in cultural heritage through serious games: Combining perspectives from the experience economy and {SOR} theory},
+  journal   = {Sustainability},
+  volume    = {16},
+  number    = {17},
+  pages     = {7608},
+  year      = {2024},
+  doi       = {10.3390/su16177608}
 }
 
-@article{doe2020,
-  title={A Study on Lorem Ipsum in Academic Research},
-  author={Doe, John and Smith, Jane},
-  journal={Journal of Sample Research},
-  volume={10},
-  number={2},
-  pages={15-30},
-  year={2020},
-  publisher={Sample Publisher}
+@article{dankov2023,
+  author    = {Dankov, Y. and Dankova, A.},
+  title     = {Educational video games as tools for raising awareness of the protection and preservation of cultural heritage},
+  journal   = {Digital Presentation and Preservation of Cultural and Scientific Heritage},
+  volume    = {13},
+  pages     = {219--228},
+  year      = {2023},
+  doi       = {10.55630/dipp.2023.13.21}
 }
 
-@misc{online2025,
-  author = {OpenAI},
-  title = {LaTeX Templates for Research},
-  year = {2025},
-  howpublished = {\url{https://www.openai.com}}
+@article{wu2023,
+  author    = {Wu, C. and Chao, Y. and Xiong, J. and Luh, D.},
+  title     = {Gamification of culture: A strategy for cultural preservation and local sustainable development},
+  journal   = {Sustainability},
+  volume    = {15},
+  number    = {1},
+  pages     = {650},
+  year      = {2023},
+  doi       = {10.3390/su15010650}
 }
 
-@book{imperial2016,
-    author = {Fritz Imperial},
-    title = "Sample Book Title Only",
-    publisher = "Rex Publishing, Inc.",
-    year = {2016}
+@article{cassone2021,
+  author    = {Cassone, V. I. and Viola, F.},
+  title     = {Echoes of the past: A gamified initiative for audience development of cultural heritage},
+  journal   = {Journal on Computing and Cultural Heritage},
+  volume    = {14},
+  number    = {4},
+  pages     = {55},
+  year      = {2021},
+  doi       = {10.1145/3477312}
 }
 
-@book{zaleta2025,
-    author = {Jericho Zaleta},
-    title = "Sample Book Title Only",
-    publisher = "Rex Publishing, Inc.",
-    year = {2016}
+@article{lin2024,
+  author    = {Lin, C. and others},
+  title     = {Alternative reality games and cultural heritage: Promoting student engagement and cultural preservation},
+  journal   = {Sustainability},
+  volume    = {16},
+  number    = {12},
+  pages     = {5200},
+  year      = {2024},
+  doi       = {10.3390/su16219451}
+}
+
+@article{huang2023,
+  author    = {Huang, T.-C. and Chen, M.-Y. and Huang, Y.-M.},
+  title     = {Applying a wearable {MR}-based mobile learning system on museum learning activities for university students},
+  journal   = {Interactive Learning Environments},
+  volume    = {31},
+  number    = {6},
+  pages     = {5744--5765},
+  year      = {2023},
+  doi       = {10.1080/10494820.2023.2228843}
+}
+
+@article{stylianidis2025,
+  author    = {Stylianidis, E. and Valari, E. and Pagani, A.},
+  title     = {Augmented reality in cultural heritage: A narrative review of design, development and evaluation approaches},
+  journal   = {Heritage},
+  volume    = {8},
+  number    = {10},
+  pages     = {421},
+  year      = {2025},
+  doi       = {10.3390/heritage8100421}
+}
+
+@article{tian2025,
+  author    = {Tian, X. and Lee, J. and Ng, C. and Lu, Y.},
+  title     = {Virtual reality in heritage education for enhanced learning experience: A mini-review and design considerations},
+  journal   = {Frontiers in Virtual Reality},
+  volume    = {6},
+  pages     = {1560594},
+  year      = {2025},
+  doi       = {10.3389/frvir.2025.1560594}
+}
+
+@article{lai2025,
+  author    = {Lai, C.-H. and Lin, S.-H.},
+  title     = {Low tech-barrier virtual reality content creation for cultural heritage education: Learning outcomes and pedagogy},
+  journal   = {Interactive Learning Environments},
+  year      = {2025},
+  doi       = {10.1080/1475939X.2025.2503768}
+}
+
+@article{li2025,
+  author    = {Li, Y. and Dong, M. and Huang, R.},
+  title     = {Bichronous modes in heritage education for enhancing motivation and learning outcomes via the {ARCS} model},
+  journal   = {NPJ Heritage Science},
+  volume    = {3},
+  pages     = {24},
+  year      = {2025},
+  doi       = {10.1038/s44575-025-00124-4}
+}
+
+@article{guo2025,
+  author    = {Guo, M. and Zhang, G. and Zhu, Y. and Xu, Y.},
+  title     = {Driving innovation and sustainable development in cultural heritage education through digital transformation},
+  journal   = {Sustainability},
+  volume    = {17},
+  number    = {1},
+  pages     = {314},
+  year      = {2025},
+  doi       = {10.3390/su17010314}
+}
+
+@article{diblas2010,
+  author    = {Di Blas, N. and Poggi, C.},
+  title     = {Towards a new era for cultural heritage education: Discussing the role of {ICT}},
+  journal   = {Computers \& Education},
+  volume    = {54},
+  number    = {4},
+  pages     = {1223--1233},
+  year      = {2010},
+  doi       = {10.1016/j.compedu.2009.11.012}
+}
+
+@article{xu2023,
+  author    = {Xu, J.},
+  title     = {Experiencing {China's} intangible cultural heritage in role-playing games: Comparative studies between {MMORPGs} and larps},
+  journal   = {International Journal of Role-Playing},
+  number    = {14},
+  pages     = {41--46},
+  year      = {2023},
+  doi       = {10.33063/ijrp.vi14.358}
+}
+
+@article{yan2023,
+  author    = {Yan, W.-J. and Li, K.-R.},
+  title     = {Sustainable cultural innovation practice: Heritage education in universities and creative inheritance of intangible cultural heritage craft},
+  journal   = {Sustainability},
+  volume    = {15},
+  number    = {2},
+  pages     = {1194},
+  year      = {2023},
+  doi       = {10.3390/su15021194}
+}
+
+@article{brumana2022,
+  author    = {Brumana, R. and Condoleo, P. and Grimoldi, A. and Banfi, F. and Landi, A. G. and Previtali, M.},
+  title     = {Teaching and learning of cultural heritage: Engaging education, professional training, and experimental activities},
+  journal   = {Heritage},
+  volume    = {5},
+  number    = {3},
+  pages     = {2565--2593},
+  year      = {2022},
+  doi       = {10.3390/heritage5030134}
+}
+
+@article{santos2024,
+  author    = {Santos, J. D. and Duxbury, N. and Silva, S.},
+  title     = {Heritage education towards sustainable development in tourism: An inclusive systematic literature review},
+  journal   = {Tourism Recreation Research},
+  volume    = {50},
+  number    = {7},
+  pages     = {1700--1722},
+  year      = {2024},
+  doi       = {10.1080/02508281.2024.2417334}
+}
+
+@article{orphanidou2024,
+  author    = {Orphanidou, Y. and Efthymiou, L. and Panayiotou, G.},
+  title     = {Cultural heritage for sustainable education amidst digitalisation},
+  journal   = {Sustainability},
+  volume    = {16},
+  number    = {4},
+  pages     = {1540},
+  year      = {2024},
+  doi       = {10.3390/su16041540}
+}
+
+@article{jangra2025,
+  author    = {Jangra, S. and Wang, H.},
+  title     = {Assessing digital tools in education process for cultural heritage: Towards participatory learning},
+  journal   = {The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  volume    = {XLVIII-M-9-2025},
+  pages     = {645--652},
+  year      = {2025},
+  doi       = {10.5194/isprs-archives-XLVIII-M-9-2025-645-2025}
+}
+
+@article{lofstrom2024,
+  author    = {L{\"o}fstr{\"o}m, J. and Virta, A.},
+  title     = {The politics of heritage education: An analysis of national curriculum guidelines in {Estonia}, {Finland}, and {Sweden}},
+  journal   = {British Journal of Educational Studies},
+  volume    = {72},
+  number    = {6},
+  pages     = {805--822},
+  year      = {2024},
+  doi       = {10.1080/01596306.2024.2412603}
+}
+
+@article{cuenca2021,
+  author    = {Cuenca-L{\'o}pez, J. M. and Mart{\'i}n-C{\'a}ceres, M. J. and Schugurensky, D.},
+  title     = {What is heritage and why is it important? Trainee teachers' conceptions about heritage and heritage education},
+  journal   = {Sustainability},
+  volume    = {13},
+  number    = {1},
+  pages     = {319},
+  year      = {2021},
+  doi       = {10.3390/su13010319}
+}
+
+@article{miguelrevilla2024,
+  author    = {Miguel-Revilla, D. and L{\'o}pez-Torres, E. and Ortu{\~n}o-Molina, J. and S{\'a}nchez-Agust{\'i}, M. and Mart{\'i}nez-Rodr{\'i}guez, R.},
+  title     = {Cultural heritage and iconic elements for history education: A study with primary education prospective teachers in {Spain}},
+  journal   = {Humanities and Social Sciences Communications},
+  volume    = {11},
+  pages     = {1590},
+  year      = {2024},
+  doi       = {10.1057/s41599-024-04123-w}
+}
+
+@article{gulya2024,
+  author    = {Gulya, N. and Feh{\'e}rv{\'a}ri, A.},
+  title     = {Fostering culturally responsive pedagogy related competencies among pre-service teachers: A systematic review of the recent research literature},
+  journal   = {Research Papers in Education},
+  volume    = {39},
+  number    = {2},
+  pages     = {348--378},
+  year      = {2024},
+  doi       = {10.1080/02671522.2023.2228312}
+}
+
+@article{pitri2025,
+  author    = {Pitri, E. and Fella, A. and Michaelidou, A.},
+  title     = {Student--teachers' perceptions about folk art and their implications for teacher education},
+  journal   = {Frontiers in Education},
+  volume    = {10},
+  pages     = {1560489},
+  year      = {2025},
+  doi       = {10.3389/feduc.2025.1560489}
+}
+
+@article{gomezhurtado2021,
+  author    = {G{\'o}mez-Hurtado, I. and Garc{\'i}a-Prieto, F. J. and Delgado-Garc{\'i}a, M.},
+  title     = {Linking curriculum content to students' cultural heritage in order to promote inclusion: An analysis of a learning-through-the arts project},
+  journal   = {International Journal of Inclusive Education},
+  volume    = {27},
+  number    = {13},
+  pages     = {1487--1502},
+  year      = {2021},
+  doi       = {10.1080/13603116.2021.1900425}
+}
+
+@article{gonzalezsanz2022,
+  author    = {Gonz{\'a}lez-Sanz, M. and Feliu-Torruella, M. and Cardona, G.},
+  title     = {Searching for heritage education in archaeological programs},
+  journal   = {Journal of Cultural Heritage Management and Sustainable Development},
+  volume    = {12},
+  number    = {1},
+  pages     = {46--66},
+  year      = {2022},
+  doi       = {10.1080/2159032X.2021.2016050}
+}
+
+@article{greaves2023,
+  author    = {Greaves, A. M. and {\"O}z, A. and Yegen, G. and Apaydin, V.},
+  title     = {Heritage education and active learning: Developing community and promoting diversity in {Turkey}},
+  journal   = {International Journal of Heritage Studies},
+  volume    = {29},
+  number    = {8},
+  pages     = {918--939},
+  year      = {2023},
+  doi       = {10.1080/20518196.2023.2176087}
+}
+
+@article{castrocalvino2020,
+  author    = {Castro-Calvi{\~n}o, L. and Rodr{\'i}guez-Medina, J. and L{\'o}pez-Facal, R.},
+  title     = {Heritage education under evaluation: The usefulness, efficiency and effectiveness of heritage education programmes},
+  journal   = {Humanities and Social Sciences Communications},
+  volume    = {7},
+  pages     = {146},
+  year      = {2020},
+  doi       = {10.1057/s41599-020-00639-z}
+}
+
+@article{abdallah2023,
+  author    = {Abdallah, A. and Alkaabi, A. M.},
+  title     = {Role of teachers in reinforcing students cultural and heritage awareness at {Abu Dhabi} schools to meet global challenge},
+  journal   = {Cogent Social Sciences},
+  volume    = {9},
+  number    = {1},
+  pages     = {2194734},
+  year      = {2023},
+  doi       = {10.1080/23311886.2023.2194734}
+}
+
+@article{wang2025,
+  author    = {Wang, L. and Sheng, Q. and Yu, L.},
+  title     = {Museum game-based learning: Innovative approaches from a constructivist perspective},
+  journal   = {Frontiers in Education},
+  volume    = {10},
+  pages     = {1576207},
+  year      = {2025},
+  doi       = {10.3389/feduc.2025.1576207}
+}
+
+@article{park2023,
+  author    = {Park, M. S. and Palmer, D. K.},
+  title     = {Whose culture is {Korean}? Toward an anti-essentialist curriculum for heritage culture},
+  journal   = {Language, Culture and Curriculum},
+  volume    = {36},
+  number    = {2},
+  pages     = {123--141},
+  year      = {2023},
+  doi       = {10.1080/07908318.2022.2056193}
+}
+
+@article{lopezfernandez2021,
+  author    = {L{\'o}pez-Fern{\'a}ndez, J. A. and Medina, S. and L{\'o}pez, M. J. and Garc{\'i}a-Mor{\'i}s, R.},
+  title     = {Perceptions of heritage among students of early childhood and primary education},
+  journal   = {Sustainability},
+  volume    = {13},
+  number    = {19},
+  pages     = {10636},
+  year      = {2021},
+  doi       = {10.3390/su131910636}
+}
+
+@article{perezguilarte2023,
+  author    = {P{\'e}rez-Guilarte, Y. and Gonz{\'a}lez-Monfort, N.},
+  title     = {Understanding the significance of cultural heritage in society from preschool: An educational practice with student teachers},
+  journal   = {Heritage},
+  volume    = {6},
+  number    = {9},
+  pages     = {6172--6188},
+  year      = {2023},
+  doi       = {10.3390/heritage6090324}
+}
+
+@article{roel2021,
+  author    = {Avila, R. V.},
+  title     = {Local wisdom in laro ng lahi as foundation in game-based pedagogy},
+  journal   = {Cakrawala Dini: Jurnal Pendidikan Anak Usia Dini},
+  volume    = {12},
+  number    = {2},
+  pages     = {107--124},
+  year      = {2021},
+  doi       = {10.17509/cd.v12i2.40304}
+}
+
+@inproceedings{yasumasa2024,
+  author    = {Yamaguchi, Y. and Mitsuhashi, Y.},
+  title     = {The introduction regarding an implementation of local revitalization {RPG} in {Ishinomaki City}},
+  booktitle = {2024 IEEE Games, Entertainment, Media Conference (GEM)},
+  pages     = {1--3},
+  year      = {2024},
+  doi       = {10.1109/gem61861.2024.10585639}
+}
+
+@article{wu2022,
+  author    = {Wu, C. and Chao, Y. and Xiong, J. and Luh, D.},
+  title     = {Gamification of culture: A strategy for cultural preservation and local sustainable development},
+  journal   = {Sustainability},
+  volume    = {15},
+  number    = {1},
+  pages     = {650},
+  year      = {2022},
+  doi       = {10.3390/su15010650}
+}
+
+@incollection{samanta2022,
+  author    = {Mariotti, S.},
+  title     = {Gamifying cultural heritage. Education, tourism development, and territory promotion},
+  booktitle = {Advances in Business Strategy and Competitive Advantage},
+  pages     = {418--444},
+  year      = {2022},
+  doi       = {10.4018/978-1-7998-9223-6.ch020}
+}
+
+@article{zeiler2021,
+  author    = {Zeiler, X. and Mukherjee, S.},
+  title     = {Video game development in {India}: A cultural and creative industry embracing regional cultural heritage(s)},
+  journal   = {Games and Culture},
+  volume    = {17},
+  number    = {1},
+  pages     = {155--177},
+  year      = {2021},
+  doi       = {10.1177/15554120211045143}
+}
+
+@incollection{galloway2024,
+  author    = {Galloway, K.},
+  title     = {Indigenous-designed pixels, circuits, and game music and sound},
+  booktitle = {The Oxford Handbook of Video Game Music and Sound},
+  editor    = {Grimshaw-Aagaard, M.},
+  pages     = {473--494},
+  publisher = {Oxford University Press},
+  year      = {2024},
+  doi       = {10.1093/oxfordhb/9780197556160.013.27}
+}
+
+@misc{santos2015,
+  author    = {Santos, J. A. C. L. d.},
+  title     = {Narrativas e jogos de interpreta{\c{c}}{\~a}o ({RPG}): Uma proposta de ensino de hist{\'o}ria},
+  howpublished = {Master's thesis, Universidade Federal do Rio Grande do Sul},
+  year      = {2015}
+}
+
+@misc{belov2022,
+  author    = {Belov, S. A.},
+  title     = {Japanese experience with using video games to perform memory policy tasks},
+  journal   = {Japanese Studies in Russia},
+  volume    = {2022},
+  number    = {2},
+  pages     = {118--134},
+  year      = {2022},
+  doi       = {10.55105/2500-2872-2022-2-118-134}
+}
+
+@article{tran2024,
+  author    = {Tran, T. N. and Nguyen, T. H. and Pham, V. T.},
+  title     = {Researching heritage in the education of traditional culture: A case study at the {Central Sector of the Imperial Citadel of Thang Long-Hanoi}},
+  journal   = {Brazilian Journal of Education, Technology and Society},
+  volume    = {17},
+  number    = {se5},
+  pages     = {157--172},
+  year      = {2024},
+  doi       = {10.14571/brajets.v17.nse5.157-172}
+}
+
+@article{jagielska2021,
+  author    = {Jagielska-Burduk, A. and Pszczy{\'n}ski, M. and Stec, P.},
+  title     = {Cultural heritage education in {UNESCO} cultural conventions},
+  journal   = {Sustainability},
+  volume    = {13},
+  number    = {6},
+  pages     = {3548},
+  year      = {2021},
+  doi       = {10.3390/su13063548}
+}
+
+@article{pasca2021,
+  author    = {Pasca, M. G. and Renzi, M. F. and Di Pietro, L. and Guglielmetti Mugion, R.},
+  title     = {Gamification in tourism and hospitality research in the era of digital platforms: A systematic literature review},
+  journal   = {Journal of Service Theory and Practice},
+  volume    = {31},
+  number    = {5},
+  pages     = {691--737},
+  year      = {2021},
+  doi       = {10.1108/JSTP-05-2020-0094}
+}
+
+@article{pradhan2023,
+  author    = {Pradhan, D. and Malik, G. and Vishwakarma, P.},
+  title     = {Gamification in tourism research: A systematic review, current insights, and future research avenues},
+  journal   = {Tourism Management Perspectives},
+  year      = {2023},
+  doi       = {10.1177/13567667231188879}
+}
+
+@article{malik2024,
+  author    = {Malik, G. and Sharma, P. and Pradhan, D.},
+  title     = {Leveraging gamification for tourism marketing activities: Toward a comprehensive conceptual model},
+  journal   = {Tourism Management Perspectives},
+  year      = {2024},
+  doi       = {10.1177/13567667241268725}
+}
+
+@article{aebli2019,
+  author    = {Aebli, A.},
+  title     = {Tourists' motives for gamified technology use},
+  journal   = {Annals of Tourism Research},
+  volume    = {78},
+  pages     = {102753},
+  year      = {2019},
+  doi       = {10.1016/j.annals.2019.102753}
+}
+
+@article{shen2020,
+  author    = {Shen, Y. S. and Choi, H. C. and Joppe, M. and others},
+  title     = {What motivates visitors to participate in a gamified trip? A player typology using {Q} methodology},
+  journal   = {Tourism Management},
+  volume    = {78},
+  pages     = {104074},
+  year      = {2020},
+  doi       = {10.1016/j.tourman.2019.104074}
+}
+
+@article{ting2025,
+  author    = {Ting, H.},
+  title     = {Mobile gamification's impact on tourism visit intention},
+  journal   = {International Journal of Tourism Research},
+  year      = {2025},
+  doi       = {10.1002/jtr.70002}
+}
+
+@article{jo2025,
+  author    = {Jo, Y. and Shin, H.},
+  title     = {Can gamification and augmented reality ({AR}) revitalize declining destinations?},
+  journal   = {Journal of Travel Research},
+  year      = {2025},
+  doi       = {10.1177/00472875251332961}
+}
+
+@article{aboushouk2021,
+  author    = {Abou-Shouk, M. and Soliman, M.},
+  title     = {The impact of gamification adoption intention on brand awareness and loyalty in tourism: The mediating effect of customer engagement},
+  journal   = {Journal of Destination Marketing \& Management},
+  volume    = {20},
+  pages     = {100559},
+  year      = {2021},
+  doi       = {10.1016/j.jdmm.2021.100559}
+}
+
+@article{chan2024,
+  author    = {Chan, W. H.},
+  title     = {Examining gamification affordances for intrinsic needs of satisfaction in tourist engagement activities on digital platforms in {Hong Kong}},
+  journal   = {Tourism and Hospitality Research},
+  year      = {2024},
+  doi       = {10.1177/14673584241299565}
+}
+
+@article{zhang2025,
+  author    = {Zhang, W. Y. and Zhang, S. N. and Ruan, W. Q. and Li, Y. Q.},
+  title     = {Can gamification marketing enhance the digital destination image of cultural heritage sites?},
+  journal   = {Tourism Management Perspectives},
+  year      = {2025},
+  doi       = {10.1177/13567667251333476}
+}
+
+@article{fan2022,
+  author    = {Fan, X. and Jiang, X. and Deng, N.},
+  title     = {Immersive technology: A meta-analysis of augmented/virtual reality applications and their impact on tourism experience},
+  journal   = {Tourism Management},
+  volume    = {91},
+  pages     = {104534},
+  year      = {2022},
+  doi       = {10.1016/j.tourman.2022.104534}
+}
+
+@article{liu2025,
+  author    = {Liu, N. and Zheng, Y. and Shi, S. and Li, X. R.},
+  title     = {From play to purpose: How gamification and goal priming enhance virtual reality tourism experiences},
+  journal   = {Journal of Travel Research},
+  year      = {2025},
+  doi       = {10.1177/00472875251383533}
+}
+
+@article{flavian2024,
+  author    = {Flavi{\'a}n, C. and Ib{\'a}{\~n}ez-S{\'a}nchez, S. and Or{\'u}s, C. and Barta, S.},
+  title     = {The dark side of the metaverse: The role of gamification in event virtualization},
+  journal   = {International Journal of Information Management},
+  volume    = {75},
+  pages     = {102726},
+  year      = {2024},
+  doi       = {10.1016/j.ijinfomgt.2023.102726}
+}
+
+@misc{huck2015,
+  author    = {Huck, J.},
+  title     = {Location-based games and place attachment in mixed-reality environments},
+  year      = {2015}
+}
+
+@misc{andrade2025,
+  author    = {Andrade, B. and others},
+  title     = {Heritage fieldwork using serious games and values-based design in {Faro, Portugal}},
+  year      = {2025}
+}
+
+@article{oliveira2025,
+  author    = {Oliveira, W. and Hamari, J.},
+  title     = {Bridging the gap between technology and psychology through gamification theory},
+  journal   = {Computers in Human Behavior},
+  year      = {2025}
+}
+
+@article{rahmi2026,
+  author    = {Rahmi, U. and others},
+  title     = {Technology Acceptance Model as a cognitive bridge for learning outcomes in technology-enhanced education},
+  journal   = {Educational Technology Research},
+  year      = {2026}
+}
+
+@misc{schultz2023,
+  author    = {Schultz, C.},
+  title     = {{REBORN}: Engaging players with reminiscing and nostalgia via interactive text-based narratives},
+  howpublished = {Undergraduate capstone project, Northeastern University},
+  year      = {2023},
+  url       = {https://repository.library.northeastern.edu/files/neu:4f18cx117}
+}
+
+@article{liu2023,
+  author    = {Liu, Y.},
+  title     = {Experiencing {China's} intangible cultural heritage in role-playing games: Comparative studies between {MMORPGs} and larps},
+  journal   = {International Journal of Role-Playing},
+  number    = {14},
+  pages     = {41--46},
+  year      = {2023},
+  doi       = {10.33063/ijrp.vi14.358}
+}
+
+@misc{li2023,
+  author    = {Li, J.},
+  title     = {Game mechanics and player engagement: The role of character design and immersive environments},
+  year      = {2023}
+}
+
+@misc{dzjanakhmetov2024,
+  author    = {Dzjanakhmetov, A. and Toksanbayeva, M.},
+  title     = {Player motivations and game attractiveness in cultural heritage games},
+  year      = {2024}
+}
+
+@misc{kou2023,
+  author    = {Kou, Y.},
+  title     = {Cultural resonance in game character design},
+  year      = {2023}
+}
+
+@misc{vries2023,
+  author    = {Vries, J. D.},
+  title     = {Game design and player immersion in heritage contexts},
+  year      = {2023}
 }
