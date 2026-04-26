@@ -24,23 +24,45 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[R]{\thepage}
+\setlength{\headheight}{14.5pt}
 
 % Avoid widow and orphan (no hanging pages)
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
 
-% Chapter formatting — matches TestX template:
-%   numbered, left-aligned, normal (not bold), Large size
+% Chapter formatting — bold, left-aligned, Large size (matches sample PDF)
 \usepackage{titlesec}
-\titleformat{\chapter}[hang]{\Large\normalfont}{\thechapter}{1em}{}
+\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter}{1em}{}
 
-% TOC formatting
+% TOC formatting — match sample PDF
 \usepackage{tocloft}
 \setlength{\cftbeforechapskip}{1em}
 
+% TOC title styling — \Large\bfseries to match List of Figures/Tables title
+\renewcommand{\cfttoctitlefont}{\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{}
+
+% Chapter entries: bold, normal size, with dot leaders
+\renewcommand{\cftchapfont}{\normalsize\bfseries}
+\renewcommand{\cftchappagefont}{\normalsize\bfseries}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% Section entries: normal weight, normal size
+\renewcommand{\cftsecfont}{\normalsize}
+\renewcommand{\cftsecpagefont}{\normalsize}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Subsection entries: normal weight, normal size
+\renewcommand{\cftsubsecfont}{\normalsize}
+\renewcommand{\cftsubsecpagefont}{\normalsize}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+
 % References
-\usepackage[numbers,sort&compress]{natbib}
+\usepackage[round,authoryear]{natbib}
+
+% Caption styling — label bold, title text normal weight (removes redundant bold)
+\usepackage[labelfont=bf,textfont=normalfont,labelsep=period]{caption}
 
 % Title Page Command
 \newcommand{\researchtitlepage}{%
@@ -66,10 +88,10 @@
 
 % --- Precise Spacing Control ---
 
-% Section/subsection formatting — matches TestX template (normal weight, left-aligned)
-\titleformat{\section}[hang]{\normalsize\normalfont}{\thesection}{1em}{}
-\titleformat{\subsection}[hang]{\normalsize\normalfont}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[hang]{\normalsize\normalfont}{\thesubsubsection}{1em}{}
+% Section/subsection formatting — bold, left-aligned (matches sample PDF)
+\titleformat{\section}[hang]{\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[hang]{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 % \titlespacing*{command}{left}{before-sep}{after-sep}
 
@@ -86,20 +108,12 @@
 
 
 
-% Table of Contents Reduce Spaces
-\usepackage{tocloft}
-% Space before "Contents" title
+% Table of Contents spacing
 \setlength{\cftbeforetoctitleskip}{0pt}
-% Space after "Contents" title
 \setlength{\cftaftertoctitleskip}{10pt}
 
-
-
-% List of Figures Reduce Spaces
-\usepackage{tocloft}
-% Space before "List of Figures" title
+% List of Figures / List of Tables spacing
 \setlength{\cftbeforeloftitleskip}{5pt}
-% Space after "List of Figures" title
 \setlength{\cftafterloftitleskip}{5pt}
 \setlength{\cftbeforelottitleskip}{5pt}
 \setlength{\cftafterlottitleskip}{5pt}
