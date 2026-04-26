@@ -22,6 +22,14 @@
   \vspace{1em}
 }
 
+% Front-matter headings styled to match sample PDF
+\newcommand{\frontmattertitle}[1]{%
+  \begin{center}
+    {\normalsize\bfseries #1}\par
+  \end{center}
+  \vspace{1.25em}
+}
+
 \begin{document}
 
 % =========================================================
@@ -202,8 +210,9 @@ examination.
 % =========================================================
 % ACKNOWLEDGMENT  (matches sample page 5)
 % =========================================================
-\chapter*{\centering ACKNOWLEDGEMENTS}
+\chapter*{}
 \addcontentsline{toc}{chapter}{ACKNOWLEDGEMENTS}
+\frontmattertitle{ACKNOWLEDGEMENT}
 
 The researchers would like to thank the following who contributed to the success of this project:
 
@@ -218,8 +227,9 @@ Lastly, to the anonymous participants who helped in providing their insights for
 % =========================================================
 % ABSTRACT  (matches sample page 6-7)
 % =========================================================
-\chapter*{\centering Abstract}
+\chapter*{}
 \addcontentsline{toc}{chapter}{Abstract}
+\frontmattertitle{Abstract}
 
 \noindent
 \begin{tabularx}{\textwidth}{@{}lX@{}}
@@ -339,53 +349,53 @@ Serious games and gamified applications have demonstrated significant capacity t
 enhance user participation in cultural heritage by producing emotional immersion and
 behavioral change toward preservation, as evidenced by frameworks such as the Experience
 Economy and the Stimulus-Organism-Response theory applied in game design contexts
-\cite{zhang2024,dankov2023,wu2023,cassone2021}.
+\citep{zhang2024,dankov2023,wu2023,cassone2021}.
 
 Alternative reality games, mixed reality systems, and wearable mobile learning tools
 have been shown to significantly outperform conventional instruction in promoting student
 engagement, emotional involvement, and awareness of cultural preservation and sustainable
-development \cite{lin2024,huang2023,stylianidis2025,tian2025}.
+development \citep{lin2024,huang2023,stylianidis2025,tian2025}.
 
 Digital transformation of cultural heritage education through platforms, virtual reality
 content creation, and bichronous learning modes combining asynchronous digital games
 with synchronous online courses produces superior learning outcomes, knowledge
 acquisition, and student satisfaction compared to either approach alone
-\cite{lai2025,li2025,guo2025,diblas2010}.
+\citep{lai2025,li2025,guo2025,diblas2010}.
 
 Heritage education in higher institutions increasingly integrates intangible cultural
 heritage through quantitative and qualitative methods, revealing that such education
 significantly enhances students' cultural identity, respect for traditional practices,
 and covariant relationships between cultural tourism integration and heritage education
-\cite{xu2023,yan2023,brumana2022,santos2024}.
+\citep{xu2023,yan2023,brumana2022,santos2024}.
 
 Digital and cultural heritage competencies among young learners promote resilience and
 readiness for digital transformation, though low digital literacy and high dropout rates
 in certain contexts continue to challenge effective integration across European
-educational systems \cite{orphanidou2024,jangra2025,lofstrom2024}.
+educational systems \citep{orphanidou2024,jangra2025,lofstrom2024}.
 
 Pre-service and in-service teachers predominantly hold surface-level, material
 conceptions of cultural heritage with limited methodological expertise, pointing to
 persistent gaps in teacher education programs across national curricula in preparing
 educators for culturally responsive heritage instruction
-\cite{cuenca2021,miguelrevilla2024,gulya2024,pitri2025}.
+\citep{cuenca2021,miguelrevilla2024,gulya2024,pitri2025}.
 
 Experiential and interdisciplinary heritage education programs, including
 learning-through-the-arts and archaeological heritage education approaches, demonstrate
 significant development of cognitive and socio-affective competencies among learners in
 multicultural and diverse educational settings
-\cite{gomezhurtado2021,gonzalezsanz2022,greaves2023,castrocalvino2020}.
+\citep{gomezhurtado2021,gonzalezsanz2022,greaves2023,castrocalvino2020}.
 
 Community-centered heritage education initiatives that actively involve local
 stakeholders, families, and local authorities achieve high methodological appreciation
 and meaningful learning outcomes, reinforcing that sustainable heritage preservation
 requires multi-stakeholder participation rather than purely institutional management
-\cite{castrocalvino2020,greaves2023,santos2024,abdallah2023}.
+\citep{castrocalvino2020,greaves2023,santos2024,abdallah2023}.
 
 Constructivist game design frameworks embedded in museum learning and heritage
 curricula, along with anti-essentialist approaches that explore fluid and hybrid cultural
 identities, support deeper cultural understanding and position heritage education as a
 transformative space rather than a vehicle for fixed cultural narratives
-\cite{wang2025,park2023,lopezfernandez2021,perezguilarte2023}.
+\citep{wang2025,park2023,lopezfernandez2021,perezguilarte2023}.
 
 \subsection{Tourist Behavior and Experience Design}
 
@@ -393,55 +403,55 @@ Participatory learning plays a central role in people-centered heritage conserva
 by engaging communities and diverse audiences in knowledge co-creation and transmission,
 with digital tools examined across four dimensions---cultural heritage, education,
 participation, and digital tool effectiveness---demonstrating varied strengths and
-limitations in supporting these goals \cite{jangra2025,santos2024,greaves2023}.
+limitations in supporting these goals \citep{jangra2025,santos2024,greaves2023}.
 
 Local cultural elements embedded in game design, such as Filipino traditional games
 (Laro ng Lahi), Japanese region-specific smartphone applications, and Tanka
 ballad-inspired games, demonstrate that localized game development fosters community
 identity, promotes cultural appreciation, and serves as a catalyst for sustainable local
-tourism and development \cite{roel2021,yasumasa2024,wu2022}.
+tourism and development \citep{roel2021,yasumasa2024,wu2022}.
 
 Italian and Indian mobile game projects that integrate regional cultural heritage into
 their design function as strategic marketing tools for cultural institutions and local
 administrations, serving dual purposes of boosting tourism and promoting cultural
 activities while reflecting locally relevant narratives and practices
-\cite{samanta2022,zeiler2021,yasumasa2024}.
+\citep{samanta2022,zeiler2021,yasumasa2024}.
 
 Authentic Indigenous sound, music, and cultural expression within game design resist
 stereotyping, promote identity preservation, and contribute to meaningful representation,
 as demonstrated by analyses of Indigenous-designed game music and sound studies that
 challenge oversimplified portrayals of cultural communities
-\cite{galloway2024,xu2023,wu2023}.
+\citep{galloway2024,xu2023,wu2023}.
 
 Role-playing games and interactive text-based narratives serve as effective
 historiographic instruments by enabling players to engage with alternative historical
 scenarios, emotional memory, and cultural narratives, demonstrating the potential of
 game-based storytelling in transmitting cultural legacy across generations
-\cite{santos2015,belov2022,cassone2021}.
+\citep{santos2015,belov2022,cassone2021}.
 
 Virtual reality and augmented reality applications for cultural heritage transmission,
 particularly for recording and reconstructing intangible heritage such as traditional
 crafts and performing arts, significantly promote both extrinsic and intrinsic motivation
 through immersion, interactivity, and enhanced educational experiences
-\cite{tian2025,stylianidis2025,lai2025}.
+\citep{tian2025,stylianidis2025,lai2025}.
 
 Experiential heritage learning approaches in formal education sites, such as the
 Imperial Citadel of Thang Long-Hanoi, yield strong skill formation outcomes, with
 approximately 94\% of students demonstrating effective cultural competency development
 through hands-on, observation-based heritage activities
-\cite{tran2024,gonzalezsanz2022,gomezhurtado2021}.
+\citep{tran2024,gonzalezsanz2022,gomezhurtado2021}.
 
 The integration of digital cultural heritage into compulsory curricula varies
 significantly across national contexts, with policy analyses revealing that divergent
 conceptualizations of heritage education in Estonia, Finland, and Sweden produce
 differing impacts on students' sense of national identity and civic participation
-\cite{lofstrom2024,jagielska2021,santos2024}.
+\citep{lofstrom2024,jagielska2021,santos2024}.
 
 Game mechanics that incorporate player preferences, motivations, character design
 quality, and immersive in-game environments significantly enhance player engagement,
 emotional investment, and overall gameplay experience, with strong artistic alignment
 and culturally resonant character design emerging as critical determinants of game
-attractiveness \cite{li2023,dzjanakhmetov2024,kou2023,vries2023}.
+attractiveness \citep{li2023,dzjanakhmetov2024,kou2023,vries2023}.
 
 \subsection{Gamification in Tourism and Travel}
 
@@ -449,52 +459,52 @@ Systematic literature reviews on gamification in tourism and hospitality consist
 identify loyalty, engagement, and behavioral intention as central outcomes of gamified
 interventions, with scholars calling for more integrated theoretical models to address
 the fragmented nature of existing literature across the sector
-\cite{pasca2021,pradhan2023,malik2024}.
+\citep{pasca2021,pradhan2023,malik2024}.
 
 Tourists' engagement with gamified systems is primarily driven by intrinsic motivations
 such as curiosity, exploration, and achievement, with distinct player typologies
 identified through Q methodology, suggesting that effective gamification must be tailored
-to diverse tourist profiles and psychological needs \cite{aebli2019,shen2020,chan2024}.
+to diverse tourist profiles and psychological needs \citep{aebli2019,shen2020,chan2024}.
 
 Mobile gamification and augmented reality game elements embedded in digital platforms
 significantly enhance tourists' visit intention and can revitalize declining destinations
 by renewing tourist interest through immersive, game-based experiences
-\cite{ting2025,jo2025,fan2022}.
+\citep{ting2025,jo2025,fan2022}.
 
 Gamification adoption meaningfully strengthens destination branding, tourist loyalty,
 and digital destination image, with customer engagement mediating the relationship
 between gamification adoption and brand outcomes, and gamified content improving
 tourists' emotional connection to heritage destinations
-\cite{aboushouk2021,zhang2025,chan2024}.
+\citep{aboushouk2021,zhang2025,chan2024}.
 
 The combination of gamification and goal priming in virtual reality tourism experiences
 produces stronger hedonic and utilitarian outcomes than either strategy alone, while
 meta-analyses confirm that immersive technologies such as AR and VR significantly
 elevate experiential quality, satisfaction, and behavioral intentions
-\cite{liu2025,fan2022,jo2025}.
+\citep{liu2025,fan2022,jo2025}.
 
 Interactive text-based narratives and serious games that connect players to emotional
 memories and nostalgia have demonstrated capacity for evoking personal reflection and
 deeper narrative engagement, reinforcing gamification's role as a mechanism for
 affective rather than purely cognitive tourism experiences
-\cite{cassone2021,pasca2021,aebli2019}.
+\citep{cassone2021,pasca2021,aebli2019}.
 
 Location-based and mixed-reality games encourage players to engage more deeply with
 physical environments, bridging the gap between digital gameplay and real-world place
 attachment, contributing to more meaningful tourism encounters and local cultural
-appreciation \cite{huck2015,jo2025,fan2022}.
+appreciation \citep{huck2015,jo2025,fan2022}.
 
 Gamification in the metaverse and virtual event tourism functions as a double-edged
 mechanism, capable of either enriching or diminishing perceived authenticity depending
 on design execution, underscoring the critical importance of thoughtful and culturally
 sensitive gamified design in digital tourism contexts
-\cite{flavian2024,zhang2025,malik2024}.
+\citep{flavian2024,zhang2025,malik2024}.
 
 Gamified cultural heritage applications deployed as strategic marketing tools in local
 government and tourism administration contexts effectively boost cultural engagement,
 audience development, and civic involvement, extending the reach of heritage
 preservation efforts beyond institutional walls into community and tourism ecosystems
-\cite{cassone2021,samanta2022,aboushouk2021,zhang2025}.
+\citep{cassone2021,samanta2022,aboushouk2021,zhang2025}.
 
 \section{Synthesis of the State-of-the-Art}
 
@@ -511,7 +521,7 @@ technology-enhanced alternatives. In response, digital tools including augmented
 (AR), virtual reality (VR), mixed reality (MR), alternative reality games (ARGs), and
 serious games have been studied as immersive substitutes that deepen learner engagement,
 emotional connection, and knowledge retention
-\cite{stylianidis2025,tian2025,huang2023,lin2024}.
+\citep{stylianidis2025,tian2025,huang2023,lin2024}.
 
 Second, gamification emerges as a particularly potent mechanism for driving both
 cultural engagement and behavioral change toward heritage preservation. Zhang et al.\
@@ -523,12 +533,12 @@ gamified experiences move beyond cognitive learning into affective and civic
 engagement---players do not merely learn about heritage, they are moved to protect it.
 This is reinforced in tourism literature, where gamification has been shown to improve
 destination branding, tourist loyalty, and digital destination image
-\cite{aboushouk2021,zhang2025}.
+\citep{aboushouk2021,zhang2025}.
 
 Third, the role of local and intangible cultural heritage receives growing attention.
-Studies on Filipino traditional games \cite{roel2021}, Chinese intangible cultural
-heritage in MMORPGs and LARPs \cite{xu2023}, Japanese localized game development
-\cite{yasumasa2024}, and Indian regional game narratives \cite{zeiler2021} all
+Studies on Filipino traditional games \citep{roel2021}, Chinese intangible cultural
+heritage in MMORPGs and LARPs \citep{xu2023}, Japanese localized game development
+\citep{yasumasa2024}, and Indian regional game narratives \citep{zeiler2021} all
 underscore the value of embedding culturally specific elements into game design.
 Galloway's work on Indigenous sound and music in games further highlights how authentic
 cultural expression within digital media resists stereotyping and promotes identity
@@ -582,7 +592,7 @@ learning theory with community-centered participatory design remains an open
 methodological frontier.
 
 Finally, while teacher preparation and curriculum integration are identified as
-structural weaknesses in heritage education broadly \cite{gulya2024,pitri2025}, there
+structural weaknesses in heritage education broadly \citep{gulya2024,pitri2025}, there
 is a scarcity of studies examining how game-based pedagogical tools designed around
 local Filipino culture can be embedded into teacher education programs to build
 culturally responsive competencies among pre-service educators.
@@ -612,36 +622,40 @@ Technology Acceptance Model (1986), proposed by Fred Davis for his dissertation,
 that a person's intent to use a system is driven by their perceptions, not necessarily
 the actual reality of the tech. These theories enable the study to dive deeper into the
 intricacies of identifying the factors that might and might not complement applications
-that are fundamentally gamified. Figure \ref{fig:theoretical_paradigm} on the next page
+that are fundamentally gamified. Figure 1 on the next page
 visually represents the theoretical framework of this study.
 
-\begin{figure}[h!]
-  \centering
-  % PLACEHOLDER: Replace the \fbox block below with \includegraphics when image is ready
-  % \includegraphics[width=0.85\textwidth]{theoretical_paradigm.png}
-  \fbox{\parbox{0.82\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 1 --- Theoretical Paradigm Diagram]}\vspace{2.5cm}}}
-  \caption{Theoretical Paradigm}
-  \label{fig:theoretical_paradigm}
-\end{figure}
 
-The diagram illustrates the theories that support and act as the foundation of the
-gamified application for cultural preservation and local tourism. It shows the Heritage
-Values Theory acting as the main foundational theory, supported by the Gamification
-Theory and Technology Acceptance Model (TAM).
+\thispagestyle{plain}
+\begin{center}
+  {\bfseries SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL\\[0.3em]
+  TOURISM\par}
+  \vspace{1.25em}
+  \includegraphics[width=0.78\textwidth]{theoretical_3.png}
+
+  \vspace{0.75em}
+  \textit{Figure 1: Theoretical Paradigm}
+\end{center}
+
+\vspace{1em}
+\noindent The diagram illustrates the theories that support and act as the foundation
+of the gamified application for cultural preservation and local tourism. It shows the
+Heritage Values Theory acting as the main foundational theory, supported by the
+Gamification Theory and Technology Acceptance Model (TAM).
+\clearpage
 
 In Faro, Portugal, a serious gaming approach was used for heritage fieldwork that used
 values-based design as the driver instead of the traditional ``material-based'' approach
-that focused only on physical preservation \cite{andrade2025}. The same approach is
+that focused only on physical preservation \citep{andrade2025}. The same approach is
 utilized in this study as a design framework that applies a values-based design on a
 gamified approach to let players assign values to virtual heritage sites. On the other
 hand, a recent study utilized the Gamification Theory to bridge the gap between
-technology and psychology \cite{oliveira2025}, similar to how this study also bridges
+technology and psychology \citep{oliveira2025}, similar to how this study also bridges
 the gap between psychological theory and technical implementation through the system
 architecture, gameplay and elements, and the content and its context. On another note,
 the Technology Acceptance Model served as the cognitive ``bridge'' between the
 technological fit and the eventual learning outcomes for a study focused around the
-topic of technology in education \cite{rahmi2026}; as such, it is used in this study
+topic of technology in education \citep{rahmi2026}; as such, it is used in this study
 to evaluate the ease of use and usefulness on top of the engagement of a gamified
 application in terms of game flow, onboarding, and narrative immersion.
 
@@ -649,23 +663,27 @@ application in terms of game flow, onboarding, and narrative immersion.
 
 The study will make use of the IPOO (Input-Process-Output-Outcome) approach to the
 conceptual framework. For the visual presentation of the mentioned framework, refer to
-Figure \ref{fig:conceptual_paradigm} on the next page.
+Figure 2 on the next page.
 
-\begin{figure}[h!]
-  \centering
-  % PLACEHOLDER: Replace the \fbox block below with \includegraphics when image is ready
-  % \includegraphics[width=0.85\textwidth]{conceptual_paradigm.png}
-  \fbox{\parbox{0.82\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 2 --- Conceptual Paradigm Diagram]}\vspace{2.5cm}}}
-  \caption{Conceptual Paradigm}
-  \label{fig:conceptual_paradigm}
-\end{figure}
 
-The diagram illustrates the process of the practical application of the foundational
-theories in correlation to the inputs and deliverables needed throughout the course of
-this study. The process and output, along with the prior inputs, form a loop along with
-the feedback, which greatly resembles the flow of the Agile Development that will be
-utilized as the development methodology of this project.
+\thispagestyle{plain}
+\begin{center}
+  {\bfseries SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL\\[0.3em]
+  TOURISM\par}
+  \vspace{1.25em}
+  \includegraphics[width=0.86\textwidth]{conceptual_ipoo.png}
+
+  \vspace{0.75em}
+  \textit{Figure 2: Conceptual Paradigm}
+\end{center}
+
+\vspace{1em}
+\noindent The diagram illustrates the process of the practical application of the
+foundational theories in correlation to the inputs and deliverables needed throughout
+the course of this study. The process and output, along with the prior inputs, form a
+loop along with the feedback, which greatly resembles the flow of the Agile Development
+that will be utilized as the development methodology of this project.
+
 
 \textbf{Input.} In the input phase, the foundational theories are used in consideration
 to choose which specific landmarks are the focus throughout this study and how the
@@ -721,7 +739,7 @@ it aimed to address the following questions:
     \end{enumerate}
 \end{enumerate}
 
-\section{Assumptions}
+\section{Assumptions of the Study}
 
 Based on the provided background of the study and subsequent problem statements, the
 following assumptions were made:
@@ -833,7 +851,7 @@ the Bicol Province.
 % =========================================================
 % CHAPTER 2 - METHODS
 % =========================================================
-\chapter{Methods}
+\chapter{Methodology}
 
 This section discussed the research methodology employed by the study.
 
@@ -975,20 +993,14 @@ page.
 
 \begin{figure}[h!]
   \centering
-  % PLACEHOLDER: Replace with actual development process flowchart image
-  % \includegraphics[width=0.85\textwidth]{dev_process_flowchart.png}
-  \fbox{\parbox{0.82\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 3 --- Development Process Flowchart]}\vspace{2.5cm}}}
+  \includegraphics[width=0.8\textwidth]{devprocess.png}
   \caption{Development Process Flowchart}
   \label{fig:dev_process}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  % PLACEHOLDER: Replace with actual game overview flowchart image
-  % \includegraphics[width=0.85\textwidth]{game_overview_flowchart.png}
-  \fbox{\parbox{0.82\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 4 --- Game Overview Flowchart]}\vspace{2.5cm}}}
+  \includegraphics[width=0.8\textwidth]{systemDesign.png}
   \caption{Game Overview Flowchart}
   \label{fig:game_overview}
 \end{figure}
@@ -1020,68 +1032,61 @@ user inputs.
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.82\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 5 --- Overall Use Case Diagram of the Game]}\vspace{2.5cm}}}
+  \includegraphics[width=0.8\textwidth]{overallUseCase.png}
   \caption{Overall Use Case Diagram of the Game}
   \label{fig:use_case_overall}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 6 --- Main Menu Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{menuUseCase.png}
   \caption{Main Menu Use Case}
   \label{fig:use_case_main_menu}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 7 --- Welcome Screen Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{welcomeUseCase.png}
   \caption{Welcome Screen Use Case}
   \label{fig:use_case_welcome}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 8 --- Chapter Selection Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{selectionUseCase.png}
   \caption{Chapter Selection Use Case}
   \label{fig:use_case_chapter}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 9 --- Mini-puzzle Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{existingUseCase.png}
   \caption{Mini-puzzle Use Case}
   \label{fig:use_case_minipuzzle}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 10 --- Settings Menu Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{settingsUseCase.png}
   \caption{Settings Menu Use Case}
   \label{fig:use_case_settings}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 11 --- Pause Menu Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{pauseUseCase.png}
   \caption{Pause Menu Use Case}
   \label{fig:use_case_pause}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
-  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2.5cm}
-    {[PLACEHOLDER: Figure 12 --- Administrator Use Case]}\vspace{2.5cm}}}
+  \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{adminUseCase.png}
   \caption{Administrator Use Case}
   \label{fig:use_case_admin}
 \end{figure}
 
+\clearpage
 \subsection{System Architecture}
 
 The system will consist of two major layers to its system architecture: the user
@@ -1133,9 +1138,9 @@ seamlessly; and (4) Collaboration that encourages cohesive teamwork across disci
 The game engine used is the Unity game engine using C\# language scripting, while the
 game art style is a pixel art style.
 
-\section{Validation and Testing Methods}
+\section{Validation and Reliability}
 
-% Not present in source document --- left blank for future completion.
+In order to ensure the validity and reliability of the study, we have ensured that the respondents are within the target respondents or fall under the specific bracket, especially those aged 13 and above. The respondents of the survey have read and consented to the data consent form provided. The raw data from the survey had an initial analysis through the use of Google Analytics that came with using Google Forms as the platform to conduct the digital survey. The data gathered from the survey is based on the respondents’ experience upon testing the gamified app, the output of this research, Project Salubako. 
 
 \clearpage
 
@@ -1165,7 +1170,7 @@ These results align with the research of Sobarna et al.\ (2024), which stated th
 authenticity of digital objects, such as real-life counterparts of landmarks, directly
 impacts user satisfaction and perceived authenticity. Furthermore, the success in
 fostering appreciation for local beauty through gamification supports the strategy
-outlined by Wu et al.\ (2023) \cite{wu2022}, who argued that gamifying culture is an
+outlined by Wu et al.\ (2023) \citep{wu2022}, who argued that gamifying culture is an
 effective tool for maintaining cultural integrity and stimulating local development.
 
 \subsection{Employed Approach Used to Provide Information About Tinambac}
@@ -1180,10 +1185,10 @@ information presented after completing the minigame. The reward-based informatio
 creates a psychological ``information gap'' that motivates learning.
 
 This approach reflects the ``serious game'' framework described by Dankov and Dankova
-(2023) \cite{dankov2023}, who argue that educational video games are superior tools for
+(2023) \citep{dankov2023}, who argue that educational video games are superior tools for
 promoting cultural heritage because they foster active awareness through participation.
 Furthermore, the success of the quest-based delivery supports the findings of Schultz
-(2023) \cite{schultz2023} regarding the use of interactive narratives to engage players
+(2023) \citep{schultz2023} regarding the use of interactive narratives to engage players
 with nostalgia and cultural reminiscing. By using NPCs as ``virtual guides,'' Project
 Salubako effectively bridges the gap between digital storytelling and real-world
 geographical education.
@@ -1210,9 +1215,9 @@ RPG and MOBA gaming structures.
 
 These findings resonate with the literature's consistent observation that effective
 gamified heritage applications must integrate entertainment depth alongside informational
-clarity \cite{ting2025,jo2025,fan2022}. The lower mechanics score also aligns with the
+clarity \citep{ting2025,jo2025,fan2022}. The lower mechanics score also aligns with the
 literature's caution that gamification functions as a double-edged mechanism
-\cite{flavian2024,zhang2025,malik2024}.
+\citep{flavian2024,zhang2025,malik2024}.
 
 \section{Design and System Plans}
 
@@ -1234,7 +1239,8 @@ the possible refinements and future implementation of Project Salubako to ensure
 relevance and effectiveness, which helped to determine the level of acceptability for
 both the game mechanics and game element functionalities.
 
-\subsubsection{Respondent Demographics}
+
+% \subsubsection{Respondent Demographics}
 
 \begin{table}[h!]
 \centering
@@ -1297,13 +1303,14 @@ sports (both 47.1\%), puzzles (35.3\%), and racing (29.4\%). Familiarity with Ti
 is very high (94.1\%), supporting the relevance of using Tinambac as the setting for a
 tourism-based gamified application.
 
-\subsubsection{Player Experience}
+
+% \subsubsection{Player Experience}
 
 \begin{table}[h!]
 \centering
 \caption{Player Experience of the Respondents}
 \label{tab:player_experience}
-\begin{tabular}{p{8cm}cc}
+\begin{tabularx}{\textwidth}{Xcc}
 \toprule
 \textbf{Statement} & \textbf{Avg. Weighted Mean} & \textbf{Verbal Interpretation} \\
 \midrule
@@ -1313,7 +1320,7 @@ The game mechanics (e.g., puzzles, exploration) were enjoyable. & 3.2 & Agree \\
 The sound and music contributed positively to the atmosphere. & 3.6 & Agree \\[0.3em]
 The overall gameplay duration (1--2 hours) was appropriate. & 3.8 & Agree \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 Table \ref{tab:player_experience} indicates that respondents generally had a positive
@@ -1323,13 +1330,14 @@ elements enhanced the atmosphere (mean 3.6), and the gameplay duration was rated
 favorably (mean 3.8). These results show consistent agreement among respondents with a
 total weighted mean of 3.4.
 
-\subsubsection{Knowledge and Awareness of Tinambac}
+
+% \subsubsection{Knowledge and Awareness of Tinambac}
 
 \begin{table}[h!]
 \centering
 \caption{Knowledge and Awareness of Tinambac of the Respondents}
 \label{tab:knowledge_awareness}
-\begin{tabular}{p{8cm}cc}
+\begin{tabularx}{\textwidth}{Xcc}
 \toprule
 \textbf{Statement} & \textbf{Avg. Weighted Mean} & \textbf{Verbal Interpretation} \\
 \midrule
@@ -1339,7 +1347,7 @@ The incorporation of real-life settings made me appreciate the content more. & 3
 I learned new things about the culture and provincial life in Tinambac. & 3.4 & Agree \\[0.3em]
 The game effectively showcased the unique views and natural beauty of Tinambac. & 3.7 & Agree \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 Table \ref{tab:knowledge_awareness} shows that the game was effective in increasing
@@ -1351,13 +1359,14 @@ effectively showcased Tinambac's beauty (mean 3.7). The total weighted mean of 3
 indicates the game delivered meaningful information and fostered appreciation for
 Tinambac's culture and attractions.
 
-\subsubsection{Perceived Impact and Recommendation}
+
+% \subsubsection{Perceived Impact and Recommendation}
 
 \begin{table}[h!]
 \centering
 \caption{Perceived Impact and Recommendation of the Respondents}
 \label{tab:perceived_impact}
-\begin{tabular}{p{8cm}cc}
+\begin{tabularx}{\textwidth}{Xcc}
 \toprule
 \textbf{Statement} & \textbf{Avg. Weighted Mean} & \textbf{Verbal Interpretation} \\
 \midrule
@@ -1366,7 +1375,7 @@ I believe this game could help promote tourism in Tinambac. & 4.0 & Agree \\[0.3
 This game is a good example of how gamification can be used for cultural preservation and tourism. & 4.0 & Agree \\[0.3em]
 I would recommend ``Project Salubako'' to others interested in games, travel, or Filipino culture. & 3.0 & Agree \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 Table \ref{tab:perceived_impact} indicates that respondents perceived the game as
@@ -1374,9 +1383,12 @@ having a positive impact. Playing the game increased interest in visiting Tinamb
 (mean 3.6), and respondents agreed it could help promote tourism (mean 4.0) and was a
 good example of gamification for cultural preservation (mean 4.0). These results support
 the idea of gamification in tourism, as stated in the research of Mariotti (2022)
-\cite{samanta2022} and Liu (2023) \cite{liu2023}, both implying that the integration
+\citep{samanta2022} and Liu (2023) \citep{liu2023}, both implying that the integration
 of real-world elements as game elements creates immersion and curiosity toward the
 locale.
+
+
+\chapter{Conclusion and Recommendations}
 
 \section{Summary of Findings}
 
@@ -1448,7 +1460,7 @@ themselves require refinement to maximize player satisfaction.
 % =========================================================
 % BIBLIOGRAPHY
 % =========================================================
-\bibliographystyle{unsrtnat}
+\bibliographystyle{apalike}
 \bibliography{references}
 
 \clearpage
