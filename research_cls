@@ -4,6 +4,8 @@
 
 % Base class
 \LoadClass[12pt]{report}
+\renewcommand{\chaptername}{}
+
 
 
 
@@ -24,23 +26,100 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \fancyhead[R]{\thepage}
+\setlength{\headheight}{14.5pt}
 
 % Avoid widow and orphan (no hanging pages)
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
 
-% Chapter formatting (remove 'Chapter' word)
+% Chapter formatting — TestX-style numbered, left-aligned on one line
 \usepackage{titlesec}
-\titleformat{\chapter}[hang]{\normalfont\Huge\bfseries}{\thechapter}{1em}{}
+\titleformat{\chapter}[hang]
+  {\normalfont\Large\bfseries}
+  {\thechapter}
+  {1em}
+  {}
 
-% TOC formatting
+% chapter* formatting — left-aligned bold title (no label)
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\LARGE\bfseries}
+  {}
+  {0pt}
+  {}
+
+% TOC formatting — match sample PDF
 \usepackage{tocloft}
 \setlength{\cftbeforechapskip}{1em}
 
-% References
-\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
-\addbibresource{references.bib}
+% TOC title styling — \Large\bfseries to match List of Figures/Tables title
+\renewcommand{\cfttoctitlefont}{\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{}
+
+% Chapter entries: bold, normal size, with dot leaders
+\renewcommand{\cftchapfont}{\normalsize\bfseries}
+\renewcommand{\cftchappagefont}{\normalsize\bfseries}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% Section entries: normal weight, normal size
+\renewcommand{\cftsecfont}{\normalsize}
+\renewcommand{\cftsecpagefont}{\normalsize}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Subsection entries: normal weight, normal size
+\renewcommand{\cftsubsecfont}{\normalsize}
+\renewcommand{\cftsubsecpagefont}{\normalsize}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% Table colour support (needed for \cellcolor, \rowcolor, \columncolor)
+\usepackage{colortbl}
+
+% List customisation (needed for enumerate label=\Alph*. etc.)
+\usepackage{enumitem}
+
+% Indent first paragraph after headings
+\usepackage{indentfirst}
+
+% References — IEEE numbered style with categorized bibliography support
+\usepackage[numbers]{natbib}
+\usepackage{url}          % enables \url{} in bibliography entries
+
+% Categorized bibliography: defines \bibjournals, \bibbooks, \bibother
+% Each category gets its own section heading and numbered list.
+\usepackage{multibib}
+\newcites{journals,books,other}{Peer-Reviewed Journals,%
+  Books and Conference Proceedings,%
+  Theses and Unpublished Works}
+
+% Redefine \bibsection so each multibib category renders as a bold subsection
+% heading (using \bibname, which multibib sets to the category title) rather
+% than a full \chapter*.
+\renewcommand{\bibsection}{%
+  \subsection*{\bibname}%
+}
+
+% Convenience macro: print all three categories under the chapter heading.
+% Usage in main.tex:  \printcategorizedbib
+\newcommand{\printcategorizedbib}{%
+  \nocitejournals{zhang2024,dankov2023,wu2023,cassone2021,lin2024,huang2023,stylianidis2025,tian2025,lai2025,li2025,guo2025,diblas2010,xu2023,yan2023,brumana2022,santos2024,orphanidou2024,jangra2025,lofstrom2024,cuenca2021,miguelrevilla2024,gulya2024,pitri2025,gomezhurtado2021,gonzalezsanz2022,greaves2023,castrocalvino2020,abdallah2023,wang2025,park2023,lopezfernandez2021,perezguilarte2023,roel2021,wu2022,zeiler2021,belov2022,tran2024,jagielska2021,pasca2021,pradhan2023,malik2024,aebli2019,shen2020,chan2024,ting2025,jo2025,fan2022,aboushouk2021,zhang2025,liu2025,flavian2024,oliveira2025,rahmi2026,liu2023}%
+  \bibliographystylejournals{IEEEtran}%
+  \bibliographyjournals{references_journals}%
+  \nocitebooks{yasumasa2024,samanta2022,galloway2024}%
+  \bibliographystylebooks{IEEEtran}%
+  \bibliographybooks{references_books}%
+  \nociteother{santos2015,li2023,dzjanakhmetov2024,kou2023,vries2023,huck2015,andrade2025,schultz2023}%
+  \bibliographystyleother{IEEEtran}%
+  \bibliographyother{references_other}%
+}
+
+% Caption styling — label above title, both left-aligned
+\usepackage[
+  labelfont=bf,
+  textfont=normalfont,
+  labelsep=newline,
+  justification=raggedright,
+  singlelinecheck=false
+]{caption}
 
 % Title Page Command
 \newcommand{\researchtitlepage}{%
@@ -63,3 +142,37 @@
 % Paragraph formatting
 \setlength{\parskip}{6pt}
 \setlength{\parindent}{0.5in}
+
+% --- Precise Spacing Control ---
+
+% Section/subsection formatting — TestX-style bold numbered headings
+\titleformat{\section}[hang]{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[hang]{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[hang]{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% \titlespacing*{command}{left}{before-sep}{after-sep}
+
+% 1. Reduce Chapter Spacing
+% -10pt pulls the title higher up the page; 12pt is about one line of space after.
+\titlespacing*{\chapter}{0pt}{-30pt}{6pt}
+
+% 2. Reduce Section Spacing
+% 6pt before and 3pt after creates a very tight, compact look.
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+% 3. Reduce Subsection Spacing
+\titlespacing*{\subsection}{0pt}{4pt}{2pt}
+
+
+
+
+
+% Table of Contents spacing
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{10pt}
+
+% List of Figures / List of Tables spacing
+\setlength{\cftbeforeloftitleskip}{5pt}
+\setlength{\cftafterloftitleskip}{5pt}
+\setlength{\cftbeforelottitleskip}{5pt}
+\setlength{\cftafterlottitleskip}{5pt}
