@@ -1,172 +1,2516 @@
-% main.tex - Updated Research Template with new title page
+
+  % main.tex - Project Salubako (refined to match sample PDF)
 \documentclass{research}
 
-\usepackage{graphicx} %LaTeX package to import graphics
-\graphicspath{{images/}} %configuring the graphicx package
+\usepackage{graphicx}
+\graphicspath{{images/}{images/game_document/}}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{enumitem} % controls itemize spacing (topsep, itemsep, parsep)
+\usepackage{changepage} % adjustwidth environment for left-side indent
+\hbadness=10000
+\hfuzz=40pt
+\vfuzz=140pt
 
-% Title Page Info
-\title{A Contemporary Software Project Of All Time}
-\author{Fritzgerald Enric T. Imperial}
-\submission{A Special Project Presented to the Faculty of the College of Computer Studies, Naga College Foundation, Inc., Naga City}
-\researchyear{2026}
+% -------------------------------------------------------
+% Helper: NCF letterhead block used on certification pages
+% -------------------------------------------------------
+\newcommand{\ncfletterhead}{%
+  \begin{center}
+    {\bfseries NAGA COLLEGE FOUNDATION, INC.}\\[0.3em]
+    College of Computer Studies\\[0.3em]
+    City of Naga
+  \end{center}
+  \vspace{1em}
+}
+
+% Front-matter headings styled to match sample PDF
+\newcommand{\frontmattertitle}[1]{%
+  \begin{center}
+    {\normalsize\bfseries #1}\par
+  \end{center}
+  \vspace{1.25em}
+}
+
+\newcommand{\frontmatterbodyblock}[3][0.78\textwidth]{%
+  {\setlength{\parindent}{0.5in}#2\indent #3\par}%
+}
+
+\newcommand{\frontmattersignature}[2][4.8cm]{%
+  \begin{center}
+    \underline{\hspace{#1}}\\
+    #2
+  \end{center}
+}
+
+% Changing Table of Contents Header Text
+\renewcommand{\contentsname}{Table of Contents}
+
+\newcommand{\gdimg}[2][0.23\textwidth]{%
+  \includegraphics[width=#1]{images/game_document/#2}%
+}
+\newcommand{\gdsection}[1]{%
+  \vspace{0.65em}\noindent\textbf{#1}\par\vspace{0.15em}%
+}
+\newcommand{\centeredusecasecaption}[2]{%
+  \refstepcounter{figure}%
+  \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}#1}%
+  \label{#2}%
+  \makebox[\textwidth][l]{\textbf{Figure \thefigure}}\par
+  \makebox[\textwidth][l]{#1}\par
+}
 
 \begin{document}
 
-% Generate Title Page
+% --- Front certification pages are unnumbered and omitted from the TOC. ---
+\pagestyle{empty}
+
+% =========================================================
+% TITLE PAGE
+% =========================================================
 \thispagestyle{empty}
 \begin{center}
-  \vspace*{1in}
-  {\Huge\bfseries ResQ: An Emergency Response and Locator System Using Dijkstra Algorithm\par}
+  % \vspace*{1in}
+  {\huge\bfseries
+  SALUBAKO: A GAMIFIED\\
+  APPLICATION FOR\\
+  CULTURAL PRESERVATION\\
+  AND LOCAL TOURISM
+  IN TINAMBAC \par}
   \vspace{1in}
-  A Special Project\\
+  A Capstone Project\\
   Presented to the Faculty of the\\
   College of Computer Studies\\
   Naga College Foundation, Inc.\\
   Naga City\\
   \vspace{1in}
   In Partial Fulfillment of\\
-  The Requirements for the Degree\\
-  Bachelor of Science in Computer Studies\\
+  The requirement for the degree\\
+  Bachelor of Science in Information Systems\\
   \vspace{0.5in}
-  Fritzgerald Enric T. Imperial
-  \\
-   \vspace*{0.5in}
+  Edglen P. Babar\\
+  Jethan Benedict M. Barcenas\\
+  Julius P. Pedimonte\\
+  Hersan Anthony P. San Agustin\\
+  Micaiah Philip M. San Miguel\\
+  \vspace*{0.5in}
   2026
 \end{center}
 \clearpage
 
-% Approval Page
-\chapter*{Approval}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+% =========================================================
+% APPROVAL SHEET  — single page, matches reference image
+% =========================================================
+\ncfletterhead
+
+\begin{center}
+  {\bfseries APPROVAL SHEET}
+\end{center}
+
+{\footnotesize
+% \vspace{0.3em}
+
+% Body paragraph — full width, indented, justified (matches Acknowledgement margins)
+{\setlength{\parindent}{0.5in}\indent This capstone project of \textbf{EDGLEN P. BABAR, HERSAN ANTHONY P.
+    SAN AGUSTIN, JETHAN BENEDICT M. BARCENAS, JULIUS P. PEDIMONTE,} and
+    \textbf{MICAIAH PHILIP M. SAN MIGUEL} entitled
+    \textbf{``SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND
+    LOCAL TOURISM IN TINAMBAC''} prepared and submitted in partial fulfillment
+    of the requirements for the degree of \textbf{BACHELOR OF SCIENCE IN
+    INFORMATION SYSTEMS} has been examined and is recommended for acceptance
+    and approval for oral examination.\par}
+
+% \vspace{0.18in}
+\begin{center}
+    \textbf{JOENHEL ARCILLA, MIT}\\
+    Adviser
+\end{center}
+
+% \vspace{0.15in}
+\begin{center}
+    \textbf{THESIS COMMITTEE}
+\end{center}
+
+% \vspace{0.12in}
+\begin{center}
+    \textbf{ENGR. RYAN ABECINA}\\
+    Chairman
+\end{center}
+
+% \vspace{0.12in}
+\noindent\begin{minipage}{0.6\textwidth}
+    \centering
+    \textbf{ANNA LORETTA C. ROMULO, PhD}\\
+    Panel Member
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \textbf{CHRISTOPHER C. ASA}\\
+    Panel Member
+\end{minipage}
+
+% \vspace{0.12in}
+\begin{center}
+    \textbf{LIELA B. GARDOSE, MBA}\\
+    Panel Secretary
+\end{center}
+
+% \vspace{0.15in}
+\begin{center}
+    \textbf{PANEL OF EXAMINERS}
+\end{center}
+
+% \vspace{0.1in}
+\begin{center}
+ \noindent Approved by the Committee on Oral Examinations on January 12, 2026. 
+\end{center}
+
+% \vspace{0.15in}
+\begin{center}
+    \textbf{ENGR. RYAN ABECINA}\\
+    Chairman
+\end{center}
+
+% \vspace{0.12in}
+\noindent\begin{minipage}{0.6\textwidth}
+    \centering
+    \textbf{ANNA LORETTA C. ROMULO, PhD}\\
+    Panel Member
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \textbf{CHRISTOPHER C. ASA}\\
+    Panel Member
+\end{minipage}
+
+\vspace{0.30in}
+{\setlength{\parindent}{0.5in}\indent Accepted and approved in partial fulfillment of the requirements for
+    the degree of Bachelor of Science in Information Systems.\par}
+
+% \vspace{0.15in}
+\begin{center}
+    \textbf{ANNA LORETTA C. ROMULO, PhD}\\
+    Dean
+\end{center}
+}
 
 \clearpage
 
-% Secretary's Certificateion Page
-\chapter*{Secretary's Certification}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+
+% =========================================================
+% SECRETARY'S CERTIFICATION  (matches sample page 3)
+% =========================================================
+\ncfletterhead
+
+\begin{center}
+  {\bfseries SECRETARY'S CERTIFICATION}
+\end{center}
+
+\vspace{0.9em}
+
+\frontmatterbodyblock[0.78\textwidth]{\small}{This capstone project of \textbf{EDGLEN P. BABAR, HERSAN ANTHONY P. SAN AGUSTIN,
+JETHAN BENEDICT M. BARCENAS, JULIUS P. PEDIMONTE, and MICAIAH PHILIP M. SAN MIGUEL}
+entitled \textbf{``SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL
+TOURISM IN TINAMBAC''} was prepared and submitted in partial fulfillment of the
+requirements for the degree of Bachelor of Science in Information Systems.
+It has been examined and certified on May 6, 2026.}
+
+\vspace{1.8em}
+\begin{center}
+    \textbf{LIELA B. GARDOSE, MBA}\\
+    Secretary
+\end{center}
 
 \clearpage
 
-% Acknowledgement Page
-\chapter*{Acknowledgement}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+% =========================================================
+% EDITOR'S CERTIFICATION  (matches sample page 4)
+% =========================================================
+\ncfletterhead
+
+\begin{center}
+  {\bfseries EDITOR'S CERTIFICATION}
+\end{center}
+
+\vspace{0.9em}
+
+\frontmatterbodyblock[0.78\textwidth]{\small}{This capstone project of \textbf{EDGLEN P. BABAR, HERSAN ANTHONY P. SAN AGUSTIN,
+JETHAN BENEDICT M. BARCENAS, JULIUS P. PEDIMONTE, and MICAIAH PHILIP M. SAN MIGUEL}
+entitled \textbf{``SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL
+TOURISM IN TINAMBAC''} was prepared and submitted in partial fulfillment of the
+requirements for the degree of Bachelor of Science in Information Systems.
+It has been examined and certified on May 6, 2026.}
+
+\vspace{1.8em}
+\begin{center}
+    \textbf{ANNA LORETTA C. ROMULO, PhD}\\
+    Editor
+\end{center}
 
 \clearpage
 
-% Table of Contents
+
+% =========================================================
+% STATISTICIANS'S CERTIFICATION  
+% =========================================================
+\ncfletterhead
+
+\begin{center}
+  {\bfseries STATISTICIAN'S CERTIFICATION}
+\end{center}
+
+\vspace{0.9em}
+
+\frontmatterbodyblock[0.78\textwidth]{\small}{This is to certify that I have reviewed the statistical methods, data analysis, and interpretations presented in the undergraduate thesis titled:}
+
+\begin{center}
+    \textbf{\small \bfseries "SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL
+TOURISM IN TINAMBAC"}
+\end{center}
+
+\frontmatterbodyblock[0.78\textwidth]{\small}{\noindent submitted by \textbf{EDGLEN P. BABAR, HERSAN ANTHONY P. SAN AGUSTIN,
+JETHAN BENEDICT M. BARCENAS, JULIUS P. PEDIMONTE, and MICAIAH PHILIP M. SAN MIGUEL} in partial fulfillment of the requirements for the degree of Systems/Information Technology at the College of Computer Studies, Naga College Foundation, Inc.}
+
+\vspace{0.5em}
+\begin{adjustwidth}{0.5in}{0pt}
+As the Consulting Statistician for this study, I have verified the following components:
+\begin{itemize}[leftmargin=*, topsep=3pt, itemsep=2pt, parsep=0pt]
+  \item Validation of the sample size and selection process to ensure
+        representativeness of the target population.
+  \item Review of the preprocessing steps, including the handling of outliers
+        and missing values within the dataset.
+  \item Ensuring that the chosen statistical tests are appropriate for the
+        research questions and the nature of the data (nominal, ordinal, or scale).
+  \item Verification of the outputs generated to ensure logical consistency
+        and mathematical accuracy.
+\end{itemize}
+\end{adjustwidth}
+\vspace{0.5em}
+
+\frontmatterbodyblock[0.78\textwidth]{\small}{Based on my evaluation, the statistical treatments applied are sound, and the resulting data interpretations accurately reflect the study's findings. The analysis provides a statistically significant basis for the researchers' conclusions.}
+\vspace{0.5em}
+
+\begin{center}
+Issued this \textbf{22nd day} of \textbf{May, 2026} at \textbf{Naga City}.
+\end{center}
+
+\vspace{1.8em}
+\begin{center}
+    \textbf{JONALYN A. ANGELES, LPT}\\
+    Statistician
+\end{center}
+
+\clearpage
+
+
+% =========================================================
+% ACKNOWLEDGMENT  (matches sample page 5)
+% =========================================================
+% --- Roman page numbering starts here; preliminary pages are not listed in the TOC. ---
+\pagenumbering{roman}
+\setcounter{page}{5}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\frontmattertitle{ACKNOWLEDGEMENT}
+
+The researchers would like to thank the following who contributed to the success of this project:
+
+First and foremost, to Mr. Joenhel Arcillar, the research adviser, for offering his time, guidance, and significant suggestions, which greatly helped in the completion of this research. His background in game development paved the way for the development and refinement of both the supporting documentation and technical outputs throughout the period of conducting this research.
+
+Second, to the panel members, who provided clear feedback and recommendations while simultaneously lending their expertise to progress the completion of this research. They ensured that the output of this research was appropriate for this course's goal and standard.
+
+Lastly, to the anonymous participants who helped in providing their insights for the findings of this research. Their participation gave the project its needed supporting feedback, which is what made the fine-tuning of the research output possible.
+
+\vspace{1cm}
+
+\begin{flushright}
+EPB, JBMB, JPP, HAPSA, \& MPMSM
+\end{flushright}
+
+\clearpage
+
+% =========================================================
+% ABSTRACT  (matches sample page 6-7)
+% =========================================================
+% --- Continue Roman numerals through the preliminary pages. ---
+\frontmattertitle{ABSTRACT}
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+  \textbf{Title:}               & SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL TOURISM IN TINAMBAC \\[0.4em]
+  \textbf{Researchers:}         & EDGLEN P. BABAR, HERSAN ANTHONY P. SAN AGUSTIN, JETHAN BENEDICT M. BARCENAS, JULIUS P. PEDIMONTE, and MICAIAH PHILIP M. SAN MIGUEL \\[0.4em]
+  \textbf{Type of Document:}    & Unpublished Undergraduate Capstone Project (2026) \\[0.4em]
+  \textbf{Accrediting College:} & College of Computer Studies \\[0.4em]
+  \textbf{School:}              & Naga College Foundation, Inc. \\[0.4em]
+  \textbf{City:}                & Naga City \\[0.4em]
+  \textbf{Region:}              & V (Bicol Region) \\[0.4em]
+  \textbf{Year of Completion:}  & 2026 \\[0.4em]
+  \textbf{Keywords:}            & Gamification, gamified tour, landmarks, game incorporation, information and entertainment, tourism \\
+\end{tabularx}
+
+\vspace{0.4em}
+
+Salubako is a gamified application that addresses the challenge of promoting local
+culture and tourism through digital technology, specifically focusing on the municipality
+of Tinambac, Camarines Sur, in the Bicol region. The study aims to develop a gamified
+tour-themed application that serves as both an informative and entertainment platform
+for users, particularly the youth aged 13 and above. The research employed a developmental design utilizing the Software Development
+Life Cycle (SDLC) methodology. The system development incorporated key architectural
+components, including the User Interface (UI), dialog system, and progression mechanics
+to create an immersive experience around selected Tinambac landmarks.
+
+The key findings of the study indicated that the gamified application was highly
+acceptable and effective in achieving its primary objectives. The system scored strongly
+in its capacity to provide relevant information about the landmarks with an average
+mean of 4.3 and was recognized as a viable tool for cultural preservation and the
+promotion of local tourism with an average mean of 4.0. While the game successfully
+delivered the necessary entertainment, the findings suggest the need for more age-
+appropriate mechanics for users aged 13 and above, such as branching clue-hunt puzzles,
+stamp or badge collection rewards for completed landmarks, and unlockable lore entries
+that deepen replay value and user engagement.
+
+The study concluded that integrating information systems with local culture through
+gamification is feasible for digital tourism promotion. The resulting application,
+``Salubako,'' helped in closing the gap in the digital documentation and promotion of
+provincial heritage, aligning with global goals for sustainable economic growth and
+cultural preservation.
+
+\clearpage
+
+% =========================================================
+% TABLE OF CONTENTS
+% =========================================================
 \tableofcontents
-
 \clearpage
+
+% =========================================================
+% LIST OF FIGURES
+% =========================================================
 \listoffigures
-
 \clearpage
+
+% =========================================================
+% LIST OF TABLES
+% =========================================================
 \listoftables
-
-\clearpage
 \clearpage
 
-\begin{abstract}
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-\end{abstract}
-
-%-----------------------------
-% Chapter 1
-%-----------------------------
+% =========================================================
+% CHAPTER 1 - INTRODUCTION
+% =========================================================
+% --- Switch to Arabic numerals, bottom center, from Chapter 1 onward ---
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}  % Arabic numerals at bottom center
 \chapter{Introduction}
+\thispagestyle{empty}   % No page number on first page of Chapter 1
 
 \section{Background of the Study}
 
-Lorem Ipsum \textcite{imperial2016} is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum \textcite{zaleta2025}.
+Games have been a significant part of most people's lives, be it to play competitively,
+as an E-Sport, or as a short escape from reality. Games have been everywhere. Almost
+everyone has seen or even played such entertainment. The diversity of the games offers
+various experiences, whether a person wants to competitively shoot someone in-game or
+just wants to live on farmland. In particular, indie games contribute greatly to the
+diverse line of games that an individual can play.
 
-According to \textcite{doe2020} software is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+A game is an art form, a combination of various media like music, art, storytelling,
+and more to create an ``experience,'' be it real or surreal. Some games want to tell a
+story, while others want to make you feel something like competitiveness, sports, or
+something ridiculous like playing as a squirrel with a gun. Nowadays, popular indie
+games often have that simple yet addicting and entertaining concept; examples are
+Minecraft which was once an indie game developed by Markus Alexej Persson; Stardew
+Valley, which is a very popular game; and Terraria, which is very similar to Minecraft
+but focuses more on the story and combat aspects. These games all have something in
+common, and that is making use of nature in an entertaining way.
 
-\begin{table}[h!]
-    \centering
-    \caption{Sample 5x5 Table with Bold Header}
-    \label{tab:sample_table}
-    \begin{tabular}{|c|c|c|c|c|} % 5 columns, centered text, with vertical lines
-        \hline
-        \textbf{Header 1} & \textbf{Header 2} & \textbf{Header 3} & \textbf{Header 4} & \textbf{Header 5} \\ % Top row (Header)
-        \hline
-        Data 1,1 & Data 1,2 & Data 1,3 & Data 1,4 & Data 1,5 \\
-        \hline
-        Data 2,1 & Data 2,2 & Data 2,3 & Data 2,4 & Data 2,5 \\
-        \hline
-        Data 3,1 & Data 3,2 & Data 3,3 & Data 3,4 & Data 3,5 \\
-        \hline
-        Data 4,1 & Data 4,2 & Data 4,3 & Data 4,4 & Data 4,5 \\
-        \hline
-    \end{tabular}
-\end{table}
+Game development, especially in the Philippines, is rather less heard of, specifically
+in any other province, as most indulge in the mainstream or mostly foreign-made.
+However, we would like to bring a different perspective. A project, not typically about
+what people would think of, but rather, a different one. The game that would bring an
+experience of simplicity and the life most people have or have never experienced before:
+exploring the unique view and experiencing the simple life of a province.
 
-\begin{figure}[h!]
-     \centering
-     % \includegraphics[width=0.8\textwidth]{photo.png}
-     \includegraphics{photo.png}
-     \caption{A descriptive title for your figure or photograph.}
-     \label{fig:my_photo}
-\end{figure}
+Supporting and promoting local tourism through gamification provides an angle that
+can be a bridge between innovation and preservation of culture and natural beauty of
+communities. In particular, the Bicol Province offers a lot when it comes to inspirations
+that can be used for game development, whether it be the mythical stories, the beautiful
+landmarks scattered around the whole province, or the culture when it comes to devotion.
+There are many parts in the Bicol province that have inherent characteristics, and one
+such place is the municipality of Tinambac, from its largest region, Camarines Sur.
+
+Salubako is a gamified application designed to guide and show a glimpse of the culture,
+natural beauty, and unique attractions of Tinambac. Whether you are an interested
+player, a local explorer, or a curious traveler, Salubako transforms the player's
+journey into a thrilling quest filled with challenges and discoveries. Salubako offers
+collective memories and experiences by exploring Tinambac's scenic views, vibrant
+communities, and cultural landmarks. Through interactive games and location-based
+mini-games, you will earn rewards and, at the same time, interesting information about
+Tinambac. This project is also in alignment with the United Nation's Sustainable
+Development Goals (SDGs), SDG 8 (Decent Work and Economic Growth) as well as SDG 11
+(Sustainable Cities and Communities), to be more specific.
+
+\section{Review of Related Literature}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+\subsection*{Cultural Heritage and Education in Games}
+
+Serious games and gamified applications have demonstrated significant capacity to
+enhance user participation in cultural heritage by producing emotional immersion and
+behavioral change toward preservation, as evidenced by frameworks such as the Experience
+Economy and the Stimulus-Organism-Response theory applied in game design contexts
+\citep{zhang2024} \citep{dankov2023} \citep{wu2023} \citep{cassone2021}.
+
+Alternative reality games, mixed reality systems, and wearable mobile learning tools
+have been shown to significantly outperform conventional instruction in promoting student
+engagement, emotional involvement, and awareness of cultural preservation and sustainable
+development \citep{lin2024} \citep{huang2023} \citep{stylianidis2025} \citep{tian2025}.
+
+Digital transformation of cultural heritage education through platforms, virtual reality
+content creation, and bichronous learning modes combining asynchronous digital games
+with synchronous online courses produces superior learning outcomes, knowledge
+acquisition, and student satisfaction compared to either approach alone
+\citep{lai2025} \citep{li2025} \citep{guo2025} \citep{diblas2010}.
+
+Heritage education in higher institutions increasingly integrates intangible cultural
+heritage through quantitative and qualitative methods, revealing that such education
+significantly enhances students' cultural identity, respect for traditional practices,
+and covariant relationships between cultural tourism integration and heritage education
+\citep{xu2023} \citep{yan2023} \citep{brumana2022} \citep{santos2024}.
+
+Digital and cultural heritage competencies among young learners promote resilience and
+readiness for digital transformation, though low digital literacy and high dropout rates
+in certain contexts continue to challenge effective integration across European
+educational systems \citep{orphanidou2024} \citep{jangra2025} \citep{lofstrom2024}.
+
+Pre-service and in-service teachers predominantly hold surface-level, material
+conceptions of cultural heritage with limited methodological expertise, pointing to
+persistent gaps in teacher education programs across national curricula in preparing
+educators for culturally responsive heritage instruction
+\citep{cuenca2021} \citep{miguelrevilla2024} \citep{gulya2024} \citep{pitri2025}.
+
+Experiential and interdisciplinary heritage education programs, including
+learning-through-the-arts and archaeological heritage education approaches, demonstrate
+significant development of cognitive and socio-affective competencies among learners in
+multicultural and diverse educational settings
+\citep{gomezhurtado2021} \citep{gonzalezsanz2022} \citep{greaves2023} \citep{castrocalvino2020}.
+
+Community-centered heritage education initiatives that actively involve local
+stakeholders, families, and local authorities achieve high methodological appreciation
+and meaningful learning outcomes, reinforcing that sustainable heritage preservation
+requires multi-stakeholder participation rather than purely institutional management
+\citep{castrocalvino2020} \citep{greaves2023} \citep{santos2024} \citep{abdallah2023}.
+
+Constructivist game design frameworks embedded in museum learning and heritage
+curricula, along with anti-essentialist approaches that explore fluid and hybrid cultural
+identities, support deeper cultural understanding and position heritage education as a
+transformative space rather than a vehicle for fixed cultural narratives
+\citep{wang2025} \citep{park2023} \citep{lopezfernandez2021} \citep{perezguilarte2023}.
+
+\subsection*{Tourist Behavior and Experience Design}
+
+Participatory learning plays a central role in people-centered heritage conservation
+by engaging communities and diverse audiences in knowledge co-creation and transmission,
+with digital tools examined across four dimensions---cultural heritage, education,
+participation, and digital tool effectiveness---demonstrating varied strengths and
+limitations in supporting these goals \citep{jangra2025} \citep{santos2024} \citep{greaves2023}.
+
+Local cultural elements embedded in game design, such as Filipino traditional games
+(Laro ng Lahi), Japanese region-specific smartphone applications, and Tanka
+ballad-inspired games, demonstrate that localized game development fosters community
+identity, promotes cultural appreciation, and serves as a catalyst for sustainable local
+tourism and development \citep{roel2021} \citep{yasumasa2024} \citep{wu2022}.
+
+Italian and Indian mobile game projects that integrate regional cultural heritage into
+their design function as strategic marketing tools for cultural institutions and local
+administrations, serving dual purposes of boosting tourism and promoting cultural
+activities while reflecting locally relevant narratives and practices
+\citep{samanta2022} \citep{zeiler2021} \citep{yasumasa2024}.
+
+Authentic Indigenous sound, music, and cultural expression within game design resist
+stereotyping, promote identity preservation, and contribute to meaningful representation,
+as demonstrated by analyses of Indigenous-designed game music and sound studies that
+challenge oversimplified portrayals of cultural communities
+\citep{galloway2024} \citep{xu2023} \citep{wu2023}.
+
+Role-playing games and interactive text-based narratives serve as effective
+historiographic instruments by enabling players to engage with alternative historical
+scenarios, emotional memory, and cultural narratives, demonstrating the potential of
+game-based storytelling in transmitting cultural legacy across generations
+\citep{santos2015} \citep{belov2022} \citep{cassone2021}.
+
+Virtual reality and augmented reality applications for cultural heritage transmission,
+particularly for recording and reconstructing intangible heritage such as traditional
+crafts and performing arts, significantly promote both extrinsic and intrinsic motivation
+through immersion, interactivity, and enhanced educational experiences
+\citep{tian2025} \citep{stylianidis2025} \citep{lai2025}.
+
+Experiential heritage learning approaches in formal education sites, such as the
+Imperial Citadel of Thang Long-Hanoi, yield strong skill formation outcomes, with
+approximately 94\% of students demonstrating effective cultural competency development
+through hands-on, observation-based heritage activities
+\citep{tran2024} \citep{gonzalezsanz2022} \citep{gomezhurtado2021}.
+
+The integration of digital cultural heritage into compulsory curricula varies
+significantly across national contexts, with policy analyses revealing that divergent
+conceptualizations of heritage education in Estonia, Finland, and Sweden produce
+differing impacts on students' sense of national identity and civic participation
+\citep{lofstrom2024} \citep{jagielska2021} \citep{santos2024}.
+
+Game mechanics that incorporate player preferences, motivations, character design
+quality, and immersive in-game environments significantly enhance player engagement,
+emotional investment, and overall gameplay experience, with strong artistic alignment
+and culturally resonant character design emerging as critical determinants of game
+attractiveness \citep{li2023} \citep{dzjanakhmetov2024} \citep{kou2023} \citep{vries2023}.
+
+\subsection*{Gamification in Tourism and Travel}
+
+Systematic literature reviews on gamification in tourism and hospitality consistently
+identify loyalty, engagement, and behavioral intention as central outcomes of gamified
+interventions, with scholars calling for more integrated theoretical models to address
+the fragmented nature of existing literature across the sector
+\citep{pasca2021} \citep{pradhan2023} \citep{malik2024}.
+
+Tourists' engagement with gamified systems is primarily driven by intrinsic motivations
+such as curiosity, exploration, and achievement, with distinct player typologies
+identified through Q methodology, suggesting that effective gamification must be tailored
+to diverse tourist profiles and psychological needs \citep{aebli2019} \citep{shen2020} \citep{chan2024}.
+
+Mobile gamification and augmented reality game elements embedded in digital platforms
+significantly enhance tourists' visit intention and can revitalize declining destinations
+by renewing tourist interest through immersive, game-based experiences
+\citep{ting2025} \citep{jo2025} \citep{fan2022}.
+
+Gamification adoption meaningfully strengthens destination branding, tourist loyalty,
+and digital destination image, with customer engagement mediating the relationship
+between gamification adoption and brand outcomes, and gamified content improving
+tourists' emotional connection to heritage destinations
+\citep{aboushouk2021} \citep{zhang2025} \citep{chan2024}.
+
+The combination of gamification and goal priming in virtual reality tourism experiences
+produces stronger hedonic and utilitarian outcomes than either strategy alone, while
+meta-analyses confirm that immersive technologies such as AR and VR significantly
+elevate experiential quality, satisfaction, and behavioral intentions
+\citep{liu2025} \citep{fan2022} \citep{jo2025}.
+
+Interactive text-based narratives and serious games that connect players to emotional
+memories and nostalgia have demonstrated capacity for evoking personal reflection and
+deeper narrative engagement, reinforcing gamification's role as a mechanism for
+affective rather than purely cognitive tourism experiences
+\citep{cassone2021} \citep{pasca2021} \citep{aebli2019}.
+
+Location-based and mixed-reality games encourage players to engage more deeply with
+physical environments, bridging the gap between digital gameplay and real-world place
+attachment, contributing to more meaningful tourism encounters and local cultural
+appreciation \citep{huck2015} \citep{jo2025} \citep{fan2022}.
+
+Gamification in the metaverse and virtual event tourism functions as a double-edged
+mechanism, capable of either enriching or diminishing perceived authenticity depending
+on design execution, underscoring the critical importance of thoughtful and culturally
+sensitive gamified design in digital tourism contexts
+\citep{flavian2024} \citep{zhang2025} \citep{malik2024}.
+
+Gamified cultural heritage applications deployed as strategic marketing tools in local
+government and tourism administration contexts effectively boost cultural engagement,
+audience development, and civic involvement, extending the reach of heritage
+preservation efforts beyond institutional walls into community and tourism ecosystems
+\citep{cassone2021} \citep{samanta2022} \citep{aboushouk2021} \citep{zhang2025}.
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\section{Synthesis of the State-of-the-Art}
+
+The body of literature reviewed reflects a rapidly expanding scholarly interest in the
+intersection of cultural heritage, education, digital technology, and gamification.
+Across these thematic domains, several converging patterns emerge.
+
+First, the literature consistently establishes that traditional approaches to cultural
+heritage education---face-to-face instruction, printed materials, and on-site
+visits---are insufficient for contemporary learners, particularly digital natives of
+Generation Z. Scholars such as Di Blas and Poggi (2010), Brumana et al.\ (2022), and
+Orphanidou et al.\ (2024) document this pedagogical gap and call for innovative,
+technology-enhanced alternatives. In response, digital tools including augmented reality
+(AR), virtual reality (VR), mixed reality (MR), alternative reality games (ARGs), and
+serious games have been studied as immersive substitutes that deepen learner engagement,
+emotional connection, and knowledge retention
+\citep{stylianidis2025} \citep{tian2025} \citep{huang2023} \citep{lin2024}.
+
+Second, gamification emerges as a particularly potent mechanism for driving both
+cultural engagement and behavioral change toward heritage preservation. Zhang et al.\
+(2024) and Wu et al.\ (2023) theorize this through frameworks like the Experience
+Economy and SOR theory, demonstrating that games capable of producing emotional
+immersion lead to stronger identification with and commitment to cultural heritage.
+Dankov and Dankova (2023) and Cassone and Viola (2021) extend this by showing that
+gamified experiences move beyond cognitive learning into affective and civic
+engagement---players do not merely learn about heritage, they are moved to protect it.
+This is reinforced in tourism literature, where gamification has been shown to improve
+destination branding, tourist loyalty, and digital destination image
+\citep{aboushouk2021} \citep{zhang2025}.
+
+Third, the role of local and intangible cultural heritage receives growing attention.
+Studies on Filipino traditional games \citep{roel2021}, Chinese intangible cultural
+heritage in MMORPGs and LARPs \citep{xu2023}, Japanese localized game development
+\citep{yasumasa2024}, and Indian regional game narratives \citep{zeiler2021} all
+underscore the value of embedding culturally specific elements into game design.
+Galloway's work on Indigenous sound and music in games further highlights how authentic
+cultural expression within digital media resists stereotyping and promotes identity
+preservation. These studies collectively argue that games localized around
+community-specific cultural markers produce deeper resonance and more meaningful
+engagement than generalized cultural content.
+
+Fourth, teacher education and curriculum integration surface as persistent structural
+challenges. Cuenca-L\'{o}pez et al.\ (2021), Miguel-Revilla et al.\ (2024), and
+L\"{o}fstr\"{o}m and Virta (2024) reveal that pre-service and in-service teachers hold
+largely material, surface-level conceptions of heritage, lack methodological expertise
+for heritage instruction, and operate within national curricula that inconsistently
+prioritize heritage education. Without strong teacher preparation, even well-designed
+heritage education programs lose their transformative potential in the classroom.
+
+Fifth, participatory and community-centered approaches are recognized as essential for
+sustainable cultural preservation. Santos et al.\ (2024), Greaves et al.\ (2023), and
+Jangra and Wang (2025) all emphasize that heritage conservation is not merely a matter
+of institutional management but requires the active participation of local communities,
+diverse audiences, and multiple stakeholders in co-creating heritage knowledge and
+meaning.
+
+\section{Gap Bridge of the Study}
+
+Despite the richness of existing scholarship, several significant gaps remain that point toward the need for the present study. While the literature broadly affirms that gamification and serious games effectively promote cultural heritage engagement, most studies are situated in European, East Asian, or Western institutional contexts. Research grounded in the specific cultural, educational, and community realities of the Philippines, particularly those that draw from Filipino indigenous games such as Laro ng Lahi as design scaffolding, remains notably underrepresented. Roel et al.\ (2021) provide a preliminary foundation, but the potential of Filipino traditional games as a structured basis for digital heritage game design remains largely unexplored. Furthermore, while emotional engagement and cultural identity have been separately studied, there is limited empirical work examining how locally embedded game narratives simultaneously strengthen cultural identity, foster intergenerational knowledge transmission, and promote sustainable heritage preservation behaviors among Filipino learners. The distinction matters: many studies measure short-term engagement or knowledge gain, but fewer trace the longer-term attitudinal and behavioral shifts, particularly cultural attachment and preservation intention, that heritage education ultimately aims to produce. Additionally, the bichronous learning model proposed by Li et al.\ (2025) and the constructivist game design framework of Wang et al.\ (2025) are promising but have not been applied or tested in informal community heritage settings or within indigenous cultural frameworks common in the Philippine archipelago. Bridging formal game-based learning theory with community-centered participatory design remains an open methodological frontier. Finally, while teacher preparation and curriculum integration are identified as structural weaknesses in heritage education broadly \citep{gulya2024} \citep{pitri2025}, there is a scarcity of studies examining how game-based pedagogical tools designed around local Filipino culture can be embedded into teacher education programs to build culturally responsive competencies among pre-service educators. The present study addresses these gaps by developing a culturally grounded, game-based heritage education framework anchored in Filipino cultural identity, drawing on indigenous game traditions, and examining its impact on learner engagement, cultural attachment, and preservation intention within a Philippine educational context.
+
+\section{Theoretical Framework}
+
+This study wishes to look into how a gamified approach to a tour around landmarks in
+the municipality of Tinambac, with the aim of promoting local tourism through the
+beauty of rural areas, the culture, and the relevant information that will be presented
+to the target players. Therefore, Heritage Values Theory (1903), which serves as the
+foundational theory of this study, was a concept proposed by the Austrian art historian
+Alois Riegl, who identified key values---specifically age value, historical value, and
+intentional commemorative value---that form the basis of, or stand in opposition to,
+modern heritage management.
+
+On top of that, the Gamification Theory (2002), coined by Nick Pelling back in 2002
+while developing a business aimed at creating game-like interfaces for electronic
+devices, will be added as the pivotal theory for this study. The concept of gamification
+is now often used in many sectors, as it conforms to the human nature of finding things
+that are entertaining to do as something worth putting more attention into. Lastly, the
+Technology Acceptance Model (1986), proposed by Fred Davis for his dissertation, argued
+that a person's intent to use a system is driven by their perceptions, not necessarily
+the actual reality of the tech. These theories enable the study to dive deeper into the
+intricacies of identifying the factors that might and might not complement applications
+that are fundamentally gamified. Figure 1 on the next page
+visually represents the theoretical framework of this study.
+
+\clearpage
+\thispagestyle{plain}
+\begin{flushleft}
+  \vspace{0.75em}
+  \textbf{Figure 1}\par
+  Theoretical Paradigm
+
+  \vspace{1.25em}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{theoretical_3.png}
+  \end{center}
+\end{flushleft}
+
+\vspace{1em}
+\noindent The diagram illustrates the theories that support and act as the foundation
+of the gamified application for cultural preservation and local tourism. It shows the
+Heritage Values Theory acting as the main foundational theory, supported by the
+Gamification Theory and Technology Acceptance Model (TAM).
+\clearpage
+
+In Faro, Portugal, a serious gaming approach was used for heritage fieldwork that used
+values-based design as the driver instead of the traditional ``material-based'' approach
+that focused only on physical preservation \citep{andrade2025}. The same approach is
+utilized in this study as a design framework that applies a values-based design on a
+gamified approach to let players assign values to virtual heritage sites. On the other
+hand, a recent study utilized the Gamification Theory to bridge the gap between
+technology and psychology \citep{oliveira2025}, similar to how this study also bridges
+the gap between psychological theory and technical implementation through the system
+architecture, gameplay and elements, and the content and its context. On another note,
+the Technology Acceptance Model served as the cognitive ``bridge'' between the
+technological fit and the eventual learning outcomes for a study focused around the
+topic of technology in education \citep{rahmi2026}; as such, it is used in this study
+to evaluate the ease of use and usefulness on top of the engagement of a gamified
+application in terms of game flow, onboarding, and narrative immersion.
+
+\section{Conceptual Framework}
+
+The study will make use of the IPOO (Input-Process-Output-Outcome) approach to the
+conceptual framework. For the visual presentation of the mentioned framework, refer to
+Figure 2 on the next page.
 
 
-However, \textcite{lamport1994} lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+\thispagestyle{plain}
+\begin{flushleft}
+  \textbf{Figure 2}\par
+  Conceptual Paradigm
+
+  \vspace{1.25em}
+  \begin{center}
+    \includegraphics[width=0.86\textwidth]{conceptual_ipoo.png}
+  \end{center}
+\end{flushleft}
+
+\vspace{1em}
+\noindent The diagram illustrates the process of the practical application of the
+foundational theories in correlation to the inputs and deliverables needed throughout
+the course of this study. The process and output, along with the prior inputs, form a
+loop along with the feedback, which greatly resembles the flow of the Agile Development
+that will be utilized as the development methodology of this project.
+
+
+\textbf{Input.} In the input phase, the foundational theories are used in consideration
+to choose which specific landmarks are the focus throughout this study and how the
+chosen landmarks and their historical and tourism data are incorporated into the
+following phase.
+
+\textbf{Process.} The study used the agile methodology for the software development
+process. Utilized the gamification principles for the design and development of the
+gamified application. All of which ensured consistent output and the consequent feedback
+that improved adaptability when it came to changes and evolving requirements throughout
+the span of the development process.
+
+\textbf{Output.} The output of this study is the gamified application, capable of
+being installed and used as a desktop application and a kiosk-type application. The
+resulting quantified data from the user testing and surveys from the output are also
+important inputs for the consequent phases.
+
+\textbf{Feedback.} The feedback phase creates the loop process for continuous
+refinement throughout this study, which enabled the researchers to adapt, make changes,
+and improve the resulting outputs from this study. The suggestions and recommendations
+from users provided the necessary fuel for making sure that the gamified application
+did its intended purpose.
+
+\textbf{Outcome.} The resulting final output after the changes and refinement are the
+supposed outcomes of this study, specifically the heritage value retention impact, which
+helps in spreading and making a lasting imprint about the cultural content and
+information of landmarks from the municipality of Tinambac to the users when they were
+using the gamified application. The same goes for the increased promotion for Tinambac,
+which is essentially the main problem that this study addressed.
 
 \section{Statement of the Problem}
 
+In correlation to the goal of providing an alternative solution to digitally promote
+the municipality of Tinambac's local tourism through a more interactive and entertaining
+manner while providing the necessary information, the study aimed to address the
+challenges of promoting local culture and tourism through gamification. Specifically,
+it aimed to address the following questions:
 
-\begin{figure}[h!]
-     \centering
-     % \includegraphics[width=0.8\textwidth]{photo.png}
-     \includegraphics{photo.png}
-     \caption{A descriptive title for your figure or photograph.}
-     \label{fig:my_photo}
-\end{figure}
+\begin{enumerate}
+  \item Which specific landmarks in the municipality of Tinambac will be incorporated
+        into the gamified application?
+  \item What design will the gamified application employ to provide information about
+        landmarks in Tinambac?
+  \item What design will the gamified application employ to provide the necessary
+        entertainment on top of the essential information about the chosen specific
+        landmarks?
+  \item What is the level of acceptability of the gamified application in terms of:
+    \begin{enumerate}
+      \item Theme Implementation
+      \item Game Element Functionality
+      \item Game Mechanics
+      \item Tourism Information Dissemination
+    \end{enumerate}
+\end{enumerate}
 
-However, \textcite{lamport1994} lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+\section{Assumptions of the Study}
+
+Based on the provided background of the study and subsequent problem statements, the
+following assumptions were made:
+
+\begin{enumerate}
+  \item The study assumes that the key landmarks included in the gamified application
+        will provide a good gamified touring experience.
+  \item The study assumes that incorporating real-life settings in games can help in
+        gaining the gamers' curiosity and make the player appreciate the contents of
+        the game as well as the real-life counterparts that it was based on.
+  \item The study assumes an immersive local setting approach in role-playing games
+        (RPGs) will provide the necessary touch of entertainment and information needed
+        to promote tourism in the municipality of Tinambac.
+  \item The study assumes that the gamified application is acceptable in terms of theme
+        implementation, game element functionality, game mechanics, and tourism
+        information dissemination.
+\end{enumerate}
+
+\section{Scope and Delimitation}
+
+The objective of this study is to provide an alternative approach to cultural
+preservation and the promotion of local tourism to the set locale, the municipality of
+Tinambac, throughout the school year 2025--2026. The study is focused on determining
+the initial effect and result through the use of the gamified application, which will
+be the main output of this study.
+
+The study will focus on individuals aged 13 and above who have an interest in both
+gaming and traveling, who want to know more about famous and important landmarks, and
+who desire to know more about different places and their significance. The mapping of
+the game will focus on the municipality of Tinambac, and only specific landmarks will
+be involved; specifically, these landmarks will be limited to 4 specific areas within
+the focus locale of this study. This is to ensure project completion in consideration
+with the needed original assets to be gathered within the given timeframe. The game
+will not include highly complex mechanics like advanced economic systems and political
+structures. The development of the game as a capstone project shall be conducted within
+the academic year 2025--2026.
+
+This gamified application's content is set for 4 main parts; this is in consideration
+of the aforementioned focus of only 4 specific landmarks. The gameplay will be good for
+1--2 hours of playtime, and the content and the progression are set to a sequential
+progression. The platforms will be, and may be limited to, the PC version of the game
+with possible compatibility to kiosk-type setups. The game will not undergo major
+updates and will be done and fully released. However, local testing and showcasing work
+in progress will be done to ensure tracking of hitting milestones and displaying the
+completion progress of the game to the game developers and testers.
 
 \section{Significance of the Study}
-Your contents here.
 
-%-----------------------------
-% Chapter 2
-%-----------------------------
-\chapter{Methods}
+Salubako, a gamified application for cultural preservation and local tourism, stands to
+benefit the following:
+
+\textbf{Local Tourism Office.} The study, especially the resulting output, will help in
+promoting local tourism, greatly complementing the goal of the Department of Tourism of
+Tinambac by showcasing local cultures and attractions that are rarely showcased to the
+public, and the study supports destination advertisement by promoting lesser-known
+attractions and encouraging more visits.
+
+\textbf{Local Government Unit.} The results of this study will benefit the local
+government unit of the municipality of Tinambac; the raw data or the consequent
+interpretation of it will provide valuable insights to modernizing the locale's cultural
+and tourism programs, which will help in transitioning to digital-first initiatives from
+the current traditional methods.
+
+\textbf{Gaming Industry.} The study provides tangible results; an apt example is the
+gamified application that will add another entry to the gaming industry, especially
+within the Bicol region, greatly showcasing the booming industry and the innovation
+that comes with it.
+
+\textbf{Other Researchers.} The study will help other researchers to utilize the
+study's findings as a reference and to support any further research on the topic or to
+develop a system innovation based on the recommendations made by the study and also
+serves as a basis for further studies that aim to examine the effectiveness of gamified
+solutions in promoting tourism.
+
+\section{Definition of Terms}
+
+\textbf{Salubako.} The term comes from the Bicol phrase ``Sa luba kong,'' which means
+``in the midst of my''---The term is also inspired by the thoughts and lyrics of the
+famous Bicol folk song titled ``Sarung Banggi.'' In this study, this term refers to the
+name of the proposed game.
+
+\textbf{Gamified Application.} Is the phrase that pertains to a software system that
+incorporates game design elements and mechanics in a non-game context (such as education
+or tourism) to improve user engagement and data retention. In the case of this study,
+it refers to the resulting gamified application, Salubako, that incorporates specific
+landmarks from the municipality of Tinambac for cultural preservation and promotion of
+local tourism.
+
+\textbf{Cultural Preservation.} The phrase refers to the systematic effort to protect,
+maintain, and sustain both tangible and intangible cultural assets from decay, loss, or
+forgetting. In this study, it applies to the digital reconstruction and use of specific
+landmarks in the municipality of Tinambac.
+
+\textbf{Gamification.} The term refers to the process of applying game elements to
+other areas of activities, such as marketing or education. In the bounds of this study,
+it refers to the similar concept, albeit applied for tourism purposes.
+
+\textbf{Landmark.} In broad terms, it refers to a specific place or object that is
+easily recognizable and signifies a specific location. In this study, it pertains to the
+chosen specific locations within the municipality of Tinambac.
+
+\textbf{Provincial Life.} It refers to the lifestyle, culture, and social dynamics
+experienced in rural or less urbanized areas, often characterized by a slower pace of
+life compared to urban areas. Within this study, this term refers to the way of life in
+the Bicol Province.
+
+\clearpage
+
+% =========================================================
+% CHAPTER 2 - METHODS
+% =========================================================
+\chapter{Methodology}
+
+This section discussed the research methodology employed by the study.
+
 \section{Research Design}
-Your contents here.
 
-\section{Data Collection}
-Your contents here.
+The research employs a quantitative design to systematically gather and analyze data
+relevant to the development of a gamified experience reflecting a tour around a
+provincial setting, specifically in the municipality of Tinambac from the province of
+Camarines Sur in the Bicol region. This approach involves collecting structured
+responses through digital surveys, which will enable the researchers to evaluate and
+interpret statistical trends. Demographic details, as well as participants' knowledge
+and perceptions of Bicol's cultural elements, will form the core of the data. The study
+prioritizes a broad age range, particularly targeting individuals aged 13 and above,
+with a focus on students and youth. Data analysis will rely on descriptive statistics,
+employing tools such as automated reports and visualizations generated through Google
+Forms. To ensure reliability and validity, only respondents fitting the specified
+criteria will be included, while ethical considerations like confidentiality and
+informed consent will be strictly observed. This design aims to generate meaningful
+insights into how real-life landmarks can be effectively integrated into game design,
+thereby achieving the study's objectives of gamifying the touring experience around
+landmarks in Tinambac.
 
-%-----------------------------
-% Chapter 3
-%-----------------------------
+\section{Population and Sampling}
+
+The study's target participants are 13 years old and above, and narrowing the
+demographics between being a student or not helped in getting a better understanding
+of a participant's awareness of this study's locale. The area where participants were
+taken from was mostly from within and the peripheries of Naga City. With the goal of
+gaining a better understanding of the target population's perception regarding their
+knowledge of the research locale in terms of awareness and interest in traveling to it,
+the target population was estimated to be beyond 15; this is considering the need for
+the participants' time and effort in testing the gamified app and consequently answering
+the survey form.
+
+\section{Research Locale}
+
+This study was conducted in the municipality of Tinambac, located in the province of Camarines Sur, Region V (Bicol Region), Philippines. Tinambac is a coastal municipality composed of 44 barangays, known for its scenic beaches, historical landmarks, and rich cultural heritage rooted in Bicolano tradition. Among its notable sites are the Municipal Hall of Tinambac in Barangay Binalay, the St. Paschal Baylon Parish Church in Barangay San Pascual, Caloco Beach in Barangay Caloco, and Cagliliog Beach Resort in Barangay Cagliliog, all of which were selected as the primary landmark subjects for this study. Despite its cultural and natural wealth, Tinambac remains a relatively lesser-known destination, with limited digital presence and few modern platforms dedicated to promoting its local tourism. The user testing and survey administration, however, were carried out within and around Naga City, given its proximity to the study locale and the concentration of the target respondent population in the area. Naga City served as the practical base for choosing the study's participants, while Tinambac itself provided the cultural and geographical context that grounded the entirety of the gamified application's content and design.
+
+\section{Research Instrument}
+
+The data collection method used for this research is by means of digital survey forms
+to gather information about the necessary details that can be incorporated into the
+project. The data collected will contain basic demographic details (optional name) and
+questions about the player's experience playing the game. This study ensures that
+respondents will have prior knowledge as to the study's intents and objectives, and
+that all questions will be relevant to the study's purpose and objectives.
+
+\section{Ethical Considerations}
+
+In order to observe the confidentiality of the survey respondents' responses, the
+researchers ensured that they would be aware of the type of data that will be collected
+on the survey sessions. The researchers did this by handing out a copy of the letter of
+consent to them. Personal data from the responses, such as names, would remain optional
+to ensure the confidentiality of the respondents' inputs. However, not-so-sensitive
+data, like gaming preferences, was collected for categorizing responses from the diverse
+crowd. The study did not ask very sensitive personal questions but rather gather some
+data relevant to the gaming experience of the game and its effect on the players.
+
+Names to be featured in the game: names of places, considering the fact that this
+research presented an alternative way of promoting local tourism for the municipality of
+Tinambac, and names of people, which were purely fictitious names to avoid copyright
+and affiliation, and so will the story and the timeline. The theme of the planned game
+will not contain any sensitive and disturbing themes. Minor graphics, design, and
+storytelling content shall be fit to a certain player age bracket target. Player
+discretion is advised.
+
+\section{Statistical Treatment of Data}
+
+In retrospect to the utilized data-gathering tool in this study, the researchers opted
+to use descriptive statistics to analyze and interpret the collected data gathered from
+the respondents. This analysis was done using the process of calculating the weighted
+mean. Interpretation of the resulting data, on the other hand, was done using the
+Likert Scale.
+
+\textbf{Weighted Mean.} The weighted mean is calculated by multiplying each value by
+its weight, summing these products, and then dividing the total by the sum of all the
+weights.
+
+\[
+\text{Weighted Average} = \frac{\sum wx}{\sum w}
+\]
+
+Where: $\Sigma =$ ``sum up''; $w =$ the weight for each data point;
+$x =$ the value of each data point.
+
+\textbf{Frequency Mean.} The frequency distribution displays the number of occurrences
+(frequency or $f$) of each distinct value or category within a dataset. It provides a
+summary of the distribution of values or categories for interpretation and analysis of
+the data.
+
+\textbf{Percentage Distribution.} Percentage distribution is a statistical tool used
+to show how a whole is divided among different categories.
+
+\[
+\text{Percentage} = \left(\frac{f}{n}\right) \times 100\%
+\]
+
+Where: $f$ represents the frequency of the value; $n$ signifies the number of
+population.
+
+\textbf{Likert Scale.} The resulting weighted mean was interpreted in the range from
+numbers 1 to 5, the lowest signifying that the response strongly disagreed with the
+statement while the highest strongly agreed.
+
+\begin{table}[ht!]
+\raggedright
+\caption{\textit{Likert Scale}}
+\label{tab:likert}
+\begin{tabular}{lll}
+\toprule
+\textbf{Weighted Mean} & \textbf{Verbal Interpretation} & \textbf{Weight} \\
+\midrule
+4.20 -- 5.00 & Strongly Agree    & 5 \\
+3.40 -- 4.19 & Agree             & 4 \\
+2.60 -- 3.39 & Neutral           & 3 \\
+1.80 -- 2.59 & Disagree          & 2 \\
+1.00 -- 1.79 & Strongly Disagree & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{System Design and Architecture}
+
+\subsection{Game Overview}
+
+The game follows Roberto as the main character. After experiencing deterioration in
+health at his job, he was later given time off to recuperate, leading to his decision
+to go back to his hometown. The player controls Roberto to explore and know more about
+the setting of the game, the municipality of Tinambac in the province of Camarines Sur,
+which also points the player to the main goal of this game as a gamified tour of
+landmarks in Tinambac. As the game progresses, the player comes into contact with the
+minigames that provide the necessary challenge for the game progression and the
+interactions that trigger tasks and information relevant to both the game and the
+real-life counterparts it was based on, since one of the objectives of this project is
+to provide information to the player about the landmarks he is exploring. To give a
+better perspective of the workings of the game, starting from running it to its core
+functions, the flow of the game is shown in Figure \ref{fig:dev_process} on the next
+page.
+
+\begin{figure}[ht!]
+  \caption{\textit{Development Process Flowchart}}
+  \label{fig:dev_process}
+  \begin{center}
+    
+  \end{center}
+  \includegraphics[width=0.8\textwidth]{devprocess.png}
+  
+\end{figure}
+
+\begin{figure}[ht!]
+  \caption{\textit{Game Overview Flowchart}}
+  \label{fig:game_overview}
+  \begin{center}
+    \includegraphics[width=1\textwidth]{systemDesign.png}
+  \end{center}
+\end{figure}
+
+The game opens up to the title screen, wherein options such as ``start,''
+``settings,'' and ``exit'' are present. The start button, when clicked, proceeds to
+provide an option to either continue the saved game or to start a new one. Upon
+starting a new game, it plays a brief introduction to the main character of the game
+named ``Roberto,'' as well as the corresponding background information needed in order
+to provide the context before proceeding to this study's main topic, which is an
+informative game using a provincial setting, particularly centered around the Bicol
+region. Once the prologue is finished, the consequent main storyline starts, which
+revolves around character interactions and landmark objectives that happen throughout
+the process of both exploring the game world and interacting with the characters within
+it. These interactions and objectives result in the progression of the game where, once
+all necessary landmarks have been explored and their corresponding objectives have been
+finished, the game continues towards its epilogue. And finally, the credit screen of
+the game rolls out, which signifies the completion of the game.
+
+As for the settings button, it involves the adjustment of the important in-game
+functions such as sound and music volume as well as the controls. The presence of these
+setting options is to target the user's game preferences. Lastly, the exit button is a
+self-explanatory option on the title screen wherein, if clicked, it asks whether the
+user is sure of exiting the game or not. If the user chooses the former, it proceeds
+to closing the game, and if the latter, it returns to the title screen awaiting further
+user inputs.
+
+As illustrated in Figure 2.2, Salubako follows a linear progression flow wherein the player navigates from the Main Menu through a narrative Prologue, completes landmark objectives paired with mini-games and puzzles, and advances to the Epilogue upon finishing all required tasks, with the option to exit the application at any point via a confirmation prompt.
+
+\clearpage
+
+\subsection{Use Case Diagrams}
+
+%  Main Menu Use Case
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Main Menu Use Case}}{fig:use_case_main_menu}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{menuUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The main menu provides the player's entry point to the game. Through this interface, the player may start a new session, continue an existing one, open the settings, or exit the application.
+
+% Welcome Screen Use Case
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Welcome Screen Use Case}}{fig:use_case_welcome}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{welcomeUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The welcome screen introduces the player to the game and prepares them for the main experience. It serves as a transition point before the player proceeds to chapter selection or gameplay.
+
+% Chapter Selection Use Case
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Chapter Selection Use Case}}{fig:use_case_chapter}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{selectionUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The chapter selection function allows players to choose available parts of the game. This supports guided progression through the landmarks and helps organize the tour-based structure of the application.
+
+% Mini-puzzle Use Case
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Mini-puzzle Use Case}}{fig:use_case_minipuzzle}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{existingUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The mini-puzzle use case describes how players interact with puzzle activities during gameplay. These activities support engagement by requiring the player to complete simple tasks before progressing.
+
+% Settings Use Case
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Settings Menu Use Case}}{fig:use_case_settings}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{settingsUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The settings menu lets the player adjust basic game preferences such as sound, music, and controls. This function improves usability by allowing the player to personalize the game experience.
+
+% Pause Menu
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Pause Menu Use Case}}{fig:use_case_pause}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{pauseUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The pause menu gives the player temporary control while gameplay is active. It allows the player to pause, resume, access settings, or return to other menu options without immediately closing the game.
+
+% Administrator Use Case
+\begin{flushleft}
+  \centeredusecasecaption{\textit{Administrator Use Case}}{fig:use_case_admin}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,height=0.5\textwidth]{adminUseCase.png}
+  \end{center}
+\end{flushleft}
+
+  The administrator use case represents system-side management functions. It focuses on maintaining application content and supporting the proper operation of game-related features.
+
+Overall, the use case diagrams summarize the major interactions between the player, administrator, and the Salubako application. They show how the player moves from the main menu to the welcome screen, chapter selection, gameplay-related puzzle activities, settings, and pause options, while the administrator supports the system by managing content and maintaining game features. Collectively, these use cases present the functional flow of the application and clarify how each component contributes to a guided, interactive, and culturally informative game experience.
+
+
+\subsection{System Architecture}
+
+The system will consist of two major layers to its system architecture: the user
+interface layer and the game logic layer. The user interface layer pertains to the main
+menu, the setting menu, and the game screen itself. This layer targets the attention of
+possible users as well as the level of retention for those who are already playing the
+game. Looking back to the employed theoretical framework of this study, gamifying
+something needs to provide visually appealing results that will work in tandem to garner
+the feeling of an informative touring experience. On the side of the game logic layer,
+it pertains to the inner workings of the system in context with the system architecture.
+The technical components include the game engine, programming language, analytics tool,
+and deployment environment. Ultimately, the two layers form the system architecture of
+Project Salubako.
+
+\begin{table}[ht!]
+
+\caption{\textit{Technical Architecture Components}}
+\label{tab:system_architecture}
+\begin{tabular}{ll}
+\toprule
+\textbf{Component}          & \textbf{Technology}  \\
+\midrule
+Game Engine                 & Unity Engine         \\
+Programming Language        & C\#                  \\
+Analytics Tool              & Unity Analytics      \\
+Deployment Environment      & On-premise           \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Software Development Process}
+
+The development methodology used for this project is Agile methodology. Agile
+development is widely used in game design for its flexibility and iterative approach.
+It enables teams to adapt quickly to changes while delivering incremental improvements,
+fostering player-focused experiences. Key practices like sprint planning, daily
+stand-ups, and iterative prototypes allow teams to test and refine gameplay mechanics
+throughout development.
+
+This methodology promotes collaboration among designers, programmers, and artists while
+integrating continuous feedback from stakeholders and QA teams. By addressing challenges
+incrementally, Agile minimizes risks and avoids costly late-stage revisions, making it
+an effective framework for creating dynamic and engaging games.
+
+Core practices and benefits include: (1) Sprint planning and daily stand-ups that
+ensure alignment and progress; (2) Iterative builds that enable early gameplay testing
+and refinement; (3) Continuous feedback loops that incorporate stakeholder and QA input
+seamlessly; and (4) Collaboration that encourages cohesive teamwork across disciplines.
+The game engine used is the Unity game engine using C\# language scripting, while the
+game art style is a pixel art style.
+
+\section{Validation and Reliability}
+
+In order to ensure the validity and reliability of the study, we have ensured that the respondents are within the target respondents or fall under the specific bracket, especially those aged 13 and above. The respondents of the survey have read and consented to the data consent form provided. The raw data from the survey had an initial analysis through the use of Google Analytics that came with using Google Forms as the platform to conduct the digital survey. The data gathered from the survey is based on the respondents’ experience upon testing the gamified app, the output of this research, Project Salubako. 
+
+\clearpage
+
+% =========================================================
+% CHAPTER 3 - RESULTS AND DISCUSSIONS
+% =========================================================
 \chapter{Results and Discussions}
-\section{Findings}
-Your contents here.
 
-\section{Analysis}
-Your contents here.
+The following pages present the study’s results alongside their interpretation and subsequent discussion. Each finding is examined in relation to the theoretical frameworks established in Chapter 1 — specifically Heritage Values Theory (Andrade et al., 2025), Gamification Theory (Oliveira \& Hamari, 2025), and the Technology Acceptance Model (Rahmi et al., 2026) — and is compared against relevant findings in the literature
 
-%-----------------------------
-% Chapter 4
-%-----------------------------
-\chapter{Conclusions}
-\section{Conclusion}
-Your contents here.
+\section{Results}
+
+\subsection{Tinambac Landmarks Incorporated in the Gamified Application}
+
+While considering the scope and delimitations stated within this study, the landmarks
+chosen to be incorporated into the game are as follows: (1) Municipal Hall of Tinambac,
+(2) St.\ Paschal Baylon Parish Church, (3) Caloco Beach, and (4) Cagliliog Beach
+Resort. These landmarks were specifically chosen out of the 44 barangays in the
+municipality of Tinambac, each landmark from a different barangay for both diversity and
+relevance to the digital tour-themed game. The Municipal Hall of Tinambac is found in
+barangay Binalay; St.\ Paschal Baylon Parish Church is in barangay San Pascual; Coloco
+Beach is in barangay Caloco, a barangay along the road to the next municipality; and
+Cagliliog Beach Resort is located in barangay Cagliliog.
+
+These results align with the research of Sobarna et al.\ (2024), which stated that the
+authenticity of digital objects, such as real-life counterparts of landmarks, directly
+impacts user satisfaction and perceived authenticity. Furthermore, the success in
+fostering appreciation for local beauty through gamification supports the strategy
+outlined by Wu et al.\ (2023) \citep{wu2022}, who argued that gamifying culture is an
+effective tool for maintaining cultural integrity and stimulating local development.
+
+\subsection{Employed Approach Used to Provide Information About Tinambac}
+
+During the development of the game, the project provides a gamified approach to tackle
+the lack of alternative means by which the go-to places in the Municipality of Tinambac
+are introduced to interested individuals. The employed approach uses combinations of:
+(1) a quest system that pushes the player to explore the chosen landmarks sequentially;
+(2) minigames within the game landmarks that provide further subtle information about
+that landmark; and (3) real-life photos of the corresponding landmark and supporting
+information presented after completing the minigame. The reward-based information model
+creates a psychological ``information gap'' that motivates learning.
+
+This approach reflects the ``serious game'' framework described by Dankov and Dankova
+(2023) \citep{dankov2023}, who argue that educational video games are superior tools for
+promoting cultural heritage because they foster active awareness through participation.
+Furthermore, the success of the quest-based delivery supports the findings of Schultz
+(2023) \citep{schultz2023} regarding the use of interactive narratives to engage players
+with nostalgia and cultural reminiscing. By using NPCs as ``virtual guides,'' Project
+Salubako effectively bridges the gap between digital storytelling and real-world
+geographical education.
+
+\subsection{Employed Design to Provide Entertainment on Top of Essential Information}
+
+Project Salubako employed a linear, lighthearted story design that incorporates specific
+landmarks, using the gamification theory as a driving force to provide the entertainment
+a user or player needs on top of essential information relevant to its real-life
+counterparts. This design comes in different instances within the gamified application;
+jigsaw puzzles that use real-life pictures of a landmark are one such example. This
+demonstrates that embedding cultural heritage content within a narrative-driven RPG
+framework is a highly effective strategy for regional tourism promotion and pedagogical
+efficacy.
+
+However, the evaluation identified a ``mechanical discrepancy'' between informational
+clarity and gameplay engagement. While players generally agreed the application provided
+necessary entertainment, the core mechanics of puzzles and exploration received a lower
+rating, suggesting that the ``serious'' component of the design outperformed its
+intended depth. This engagement gap highlights a need for mechanical refinement, such
+as implementing adaptive difficulty or more complex, context-linked puzzles, to better
+satisfy the expectations of a target demographic already accustomed to high-engagement
+RPG and MOBA gaming structures.
+
+These findings resonate with the literature's consistent observation that effective
+gamified heritage applications must integrate entertainment depth alongside informational
+clarity \citep{ting2025} \citep{jo2025} \citep{fan2022}. The lower mechanics score also aligns with the
+literature's caution that gamification functions as a double-edged mechanism
+\citep{flavian2024} \citep{zhang2025} \citep{malik2024}.
+
+
+\subsection{Level of Acceptability of the Gamified Application}
+
+The foundational data of the study was collected from a survey with a total of 17
+respondents, whose feedback was organized into four categories which are the results for
+the 4 criteria in the level of acceptability of the gamified application, Salubako.
+First is the player experience of the respondents; this category assessed the player's
+overall experience in using the gamified application, which greatly provided insights
+into the level of acceptability of the theme implementation that the study had. The
+second category is about the knowledge and awareness of Tinambac of the respondents,
+which serves as the crucial diagnostic tool, measuring the current understanding of the
+subject matter; if the study provides information through gaming experience, it falls
+under the level of acceptability of tourism information dissemination. And lastly, the
+Perceived Impact and Recommendation of the Respondents contains the captured
+forward-looking suggestions and participants' anticipated value of the project, guiding
+the possible refinements and future implementation of Project Salubako to ensure its
+relevance and effectiveness, which helped to determine the level of acceptability for
+both the game mechanics and game element functionalities.
+
+
+% \subsubsection{Respondent Demographics}
+
+\begin{table}[ht!]
+
+\caption{\textit{Respondents' Demographic Data}}
+\label{tab:demographics}
+\begin{tabular}{lcc}
+\toprule
+\multicolumn{3}{c}{\textbf{Respondents' Age Distribution}} \\
+\midrule
+\textbf{Age}              & \textbf{Frequency ($f$)} & \textbf{Percentage (\%)} \\
+\midrule
+13 to 17                  & 3  & 17.6\% \\
+18 and Above              & 14 & 82.4\% \\
+\midrule
+\multicolumn{3}{c}{\textbf{Respondents' Educational Status Distribution}} \\
+\midrule
+\textbf{Educational Status} & \textbf{Frequency ($f$)} & \textbf{Percentage (\%)} \\
+\midrule
+Yes (Student)             & 11 & 64.7\% \\
+No                        & 6  & 35.3\% \\
+\midrule
+\multicolumn{3}{c}{\textbf{Respondents' Gaming Frequency Distribution}} \\
+\midrule
+\textbf{Gaming Frequency} & \textbf{Frequency ($f$)} & \textbf{Percentage (\%)} \\
+\midrule
+Never                     & 0  & 0\%    \\
+Occasionally              & 4  & 23.5\% \\
+Sometimes                 & 4  & 23.5\% \\
+Often                     & 5  & 29.4\% \\
+Always                    & 4  & 23.5\% \\
+\midrule
+\multicolumn{3}{c}{\textbf{Respondents' Game Type Distribution}} \\
+\midrule
+\textbf{Game Type}        & \textbf{Frequency ($f$)} & \textbf{Percentage (\%)} \\
+\midrule
+RPG                       & 10 & 58.8\% \\
+FPS                       & 8  & 47.1\% \\
+MOBA                      & 13 & 76.5\% \\
+Racing                    & 5  & 29.4\% \\
+Sports                    & 8  & 47.1\% \\
+Puzzles                   & 6  & 35.3\% \\
+\midrule
+\multicolumn{3}{c}{\textbf{Respondents' Tinambac Familiarity Distribution}} \\
+\midrule
+\textbf{Locale Familiarity} & \textbf{Frequency ($f$)} & \textbf{Percentage (\%)} \\
+\midrule
+Yes                       & 16 & 94.1\% \\
+No                        & 1  & 5.1\%  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table \ref{tab:demographics} presents the demographic profile of the respondents,
+highlighting their age, educational status, gaming habits, preferred game types, and
+familiarity with Tinambac. The majority of respondents are aged 18 and above (82.4\%),
+and 64.7\% are students. Regarding gaming frequency, most respondents play games
+regularly, with 29.4\% playing often and 23.5\% always, while none have never played
+games. MOBA games are the most popular (76.5\%), followed by RPGs (58.8\%), FPS and
+sports (both 47.1\%), puzzles (35.3\%), and racing (29.4\%). Familiarity with Tinambac
+is very high (94.1\%), supporting the relevance of using Tinambac as the setting for a
+tourism-based gamified application.
+
+
+% \subsubsection{Player Experience}
+
+\begin{table}[ht!]
+\centering
+\caption{\textit{Player Experience of the Respondents}}
+\label{tab:player_experience}
+\begin{tabularx}{\textwidth}{Xcc}
+\toprule
+\textbf{Statement} & \textbf{Avg. Weighted Mean} & \textbf{Verbal Interpretation} \\
+\midrule
+The game was engaging and fun to play. & 3.1 & Agree \\[0.3em]
+The game effectively provided necessary entertainment. & 3.3 & Agree \\[0.3em]
+The game mechanics (e.g., puzzles, exploration) were enjoyable. & 3.2 & Agree \\[0.3em]
+The sound and music contributed positively to the atmosphere. & 3.6 & Agree \\[0.3em]
+The overall gameplay duration (1--2 hours) was appropriate. & 3.8 & Agree \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table \ref{tab:player_experience} indicates that respondents generally had a positive
+experience with the game. The game was engaging and fun (mean 3.1), effectively
+provided entertainment (mean 3.3), and had enjoyable mechanics (mean 3.2). Audio
+elements enhanced the atmosphere (mean 3.6), and the gameplay duration was rated
+favorably (mean 3.8). These results show consistent agreement among respondents with a
+total weighted mean of 3.4. In relation to the Technology Acceptance Model (TAM), these
+results suggest that the application was perceived as sufficiently easy to use and
+pleasant to navigate, particularly in terms of game flow, pacing, and overall session
+length. The favorable response to gameplay duration and atmosphere supports the TAM
+premise that when users perceive a system as manageable and accessible, they are more
+likely to accept it and continue engaging with it.
+
+
+% \subsubsection{Knowledge and Awareness of Tinambac}
+
+\begin{table}[ht!]
+\centering
+\caption{\textit{Knowledge and Awareness of Tinambac of the Respondents}}
+\label{tab:knowledge_awareness}
+\begin{tabularx}{\textwidth}{Xcc}
+\toprule
+\textbf{Statement} & \textbf{Avg. Weighted Mean} & \textbf{Verbal Interpretation} \\
+\midrule
+The game provided clear and useful information about landmarks in Tinambac. & 4.3 & Strongly Agree \\[0.3em]
+The game made me curious to learn more about Tinambac. & 3.5 & Agree \\[0.3em]
+The incorporation of real-life settings made me appreciate the content more. & 3.9 & Agree \\[0.3em]
+I learned new things about the culture and provincial life in Tinambac. & 3.4 & Agree \\[0.3em]
+The game effectively showcased the unique views and natural beauty of Tinambac. & 3.7 & Agree \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table \ref{tab:knowledge_awareness} shows that the game was effective in increasing
+the respondents' knowledge of Tinambac. Informational content was the game's strongest
+aspect (mean 4.3, Strongly Agree). The game sparked curiosity (mean 3.5), and the
+integration of real-life settings was positively received (mean 3.9). Respondents also
+reported learning new things about culture and provincial life (mean 3.4), and the game
+effectively showcased Tinambac's beauty (mean 3.7). The total weighted mean of 3.7
+indicates the game delivered meaningful information and fostered appreciation for
+Tinambac's culture and attractions. The high information score may be attributed to how
+the game embedded landmark details into the core experience instead of presenting them
+as detached descriptions. In particular, the dialog system helped explain the historical
+and cultural value of each location in a guided and easy-to-follow manner, while the
+progression mechanics required players to move from one landmark to another in sequence,
+reinforcing recall through repeated exposure. The use of real-life settings and photos
+also likely strengthened the respondents' perception that the information was clear,
+relevant, and directly connected to actual places in Tinambac. This also supports the
+study's use of Heritage Values Theory, since the respondents' appreciation of real-life
+settings and culturally grounded content suggests that the game was able to communicate
+the historical and commemorative value of the selected landmarks rather than presenting
+them as generic background locations. At the same time, the clarity of the information
+delivery reflects TAM's premise that perceived usefulness contributes to system
+acceptance, because participants recognized the application as a useful medium for
+learning about Tinambac. These results also align with the related literature on
+localized game design, particularly the studies on Filipino traditional games
+(Laro ng Lahi) and region-specific heritage applications, which found that culturally
+grounded mechanics and familiar local references improve cultural appreciation and
+identity connection. Similar to those studies, Salubako performed strongly when it used
+local landmarks, familiar imagery, and place-based storytelling as the basis of player
+interaction. However, unlike some of the more mature gamified tourism applications in
+the literature, Salubako's curiosity and entertainment scores were more moderate than
+its information score, suggesting that its strongest contribution lies in information
+delivery and heritage framing rather than in deeper replayability or broader tourism
+motivation.
+
+
+% \subsubsection{Perceived Impact and Recommendation}
+
+\begin{table}[ht!]
+\centering
+\caption{\textit{Perceived Impact and Recommendation of the Respondents}}
+\label{tab:perceived_impact}
+\begin{tabularx}{\textwidth}{Xcc}
+\toprule
+\textbf{Statement} & \textbf{Avg. Weighted Mean} & \textbf{Verbal Interpretation} \\
+\midrule
+Playing ``Project Salubako'' made me more interested in visiting Tinambac. & 3.6 & Agree \\[0.3em]
+I believe this game could help promote tourism in Tinambac. & 4.0 & Agree \\[0.3em]
+This game is a good example of how gamification can be used for cultural preservation and tourism. & 4.0 & Agree \\[0.3em]
+I would recommend ``Project Salubako'' to others interested in games, travel, or Filipino culture. & 3.0 & Agree \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table \ref{tab:perceived_impact} indicates that respondents perceived the game as
+having a positive impact. Playing the game increased interest in visiting Tinambac
+(mean 3.6), and respondents agreed it could help promote tourism (mean 4.0) and was a
+good example of gamification for cultural preservation (mean 4.0). These results support
+the idea of gamification in tourism, as stated in the research of Mariotti (2022)
+\citep{samanta2022} and Liu (2023) \citep{liu2023}, both implying that the integration
+of real-world elements as game elements creates immersion and curiosity toward the
+locale. Viewed through Heritage Values Theory, these findings indicate that the game did
+not only entertain but also helped frame the landmarks as places worthy of remembrance,
+attention, and preservation. From the perspective of TAM, the strong agreement that the
+game could promote tourism and cultural preservation also suggests that users perceived
+the application as useful, which is a key factor in encouraging continued acceptance and
+recommendation of the system. In comparison with the related literature, Salubako shows
+similar outcomes to the gamified tourism and heritage applications discussed in the
+review: it supports cultural appreciation and is perceived as a viable promotional tool.
+This is especially consistent with studies showing that locally rooted digital heritage
+projects can stimulate interest in destinations through immersion and narrative context.
+At the same time, Salubako's recommendation score (mean 3.0) is more modest than its
+tourism-promotion score, which slightly contrasts with studies on stronger commercial or
+institutional tourism apps that often report higher behavioral intention. This suggests
+that while Salubako already matches the literature in educational and cultural value, it
+still has room to improve its persuasive and replay-oriented features. Moreover, the
+mean score of 4.0 for the application's viability in cultural preservation can be linked
+directly to SDG 11 (Sustainable Cities and Communities), which the study identified
+earlier as one of its guiding development goals. By presenting local landmarks in an
+interactive and accessible format, the application supports the safeguarding and public
+appreciation of community heritage, which is central to building more culturally aware,
+inclusive, and sustainable communities.
+
+\begin{table}[p!]
+\centering
+\caption{\textit{Interpretive Mapping of Survey Feedback to Game Chapters and Landmarks}}
+\label{tab:feedback_landmark_map}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3cm}X>{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+\textbf{Chapter or Landmark} & \textbf{Relevant Survey Feedback Theme} & \textbf{Interpretive Contribution} \\
+\midrule
+Municipal Hall of Tinambac (Municipio) & Clear and useful information about landmarks; appreciation of real-life settings & Supported the strong information score by grounding the player in a recognizable civic and historical location. \\
+St.\ Paschal Baylon Parish Church & Cultural appreciation; curiosity about Tinambac; preservation value & Reinforced the heritage dimension by connecting gameplay with religious and historical identity. \\
+Caloco Beach & Showcasing natural beauty; increased interest in visiting Tinambac & Contributed to tourism appeal by highlighting scenic value and destination curiosity. \\
+Cagliliog Beach Resort & Entertainment and exploration; visual appreciation of the locale & Helped balance informational goals with leisure-oriented exploration and atmosphere. \\
+Quest and chapter progression across landmarks & Ease of understanding; usefulness of information delivery; continued engagement & Linked the landmarks into a guided narrative flow that improved recall and sustained player movement through the tour experience. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table \ref{tab:feedback_landmark_map} provides an interpretive guide for relating the
+survey findings to the major chapters or landmark segments of the game. Rather than
+claiming that each landmark was scored separately in the survey, the table synthesizes
+how the strongest feedback themes correspond to the implemented locations and chapter
+flow of Project Salubako. This helps clarify which parts of the experience most likely
+supported information retention, cultural appreciation, and tourism interest.
+
+
+\section{Summary of Findings}
+
+The research focused on the issue regarding the lack of alternative options to showcase
+landmarks from the Municipality of Tinambac in a more entertaining manner. The
+researchers identified and sought to address the following problems: (1) which landmarks
+to incorporate in the gamified application, (2) how it will provide information about
+the landmarks, (3) what design it will employ to provide entertainment on top of the
+information, and (4) the level of acceptability of the gamified application.
+
+The research used a quantitative approach to gain concrete feedback from user testing.
+The gathered data was divided into 4 categories: Demographic data, Player Experience,
+Knowledge and Awareness of Tinambac, and Perceived Impact and Recommendation. All
+categories contributed to gaining a better understanding of the effectiveness of the
+gamified approach for promoting the local tourism of the Municipality of Tinambac.
+
+\section{Conclusions}
+
+The findings of the study showed the effectiveness of a gamified approach to tackling the lack of an alternative means for cultural preservation and promoting local tourism, which was made possible through using a gamified application.
+
+The first problem was addressed though the process in which researchers chose 4 specific landmarks from the 44 barangays of the
+Municipality of Tinambac: the Municipal Hall of Tinambac (barangay Binalay), St.\
+Paschal Baylon Parish Church (barangay San Pascual), Caloco beach, and Cagliliog beach.
+The game incorporated each landmark in a respective manner.
+
+The gamified application employed real-world
+assets, landmark names, and cultural nuances, as well as mini-game or quest completion
+prompts, to provide information about each landmark. The overall map within the gamified
+application also served as a medium to disseminate information by providing a layout of
+the Municipality of Tinambac with pinned locations for the incorporated landmarks.
+
+The gamified application
+employed combinations of a quest system for the sequential exploration of the landmarks,
+interactive mini-games within each landmark, and real-life photos with corresponding
+information made possible by game interactions and the completion of mini-games.
+
+The game was successful in its informational role---participants strongly agreed that
+it provided clear and useful information (mean 4.3). It sparked curiosity about the
+locality (mean 3.5) and increased appreciation through real-life settings (mean 3.9).
+Players found the game engaging and fun (mean 3.1) and felt it effectively provided
+entertainment (mean 3.3). The game's atmosphere, including sound and music (mean 3.6),
+contributed positively to the player experience. These results suggest that the strongest
+aspect of the application was not only the presence of information itself, but the way
+that information was delivered through gameplay. The dialog system appears to have made
+the content easier to understand, while the quest flow and progression mechanics helped
+players connect each task with a specific landmark and its cultural context. This likely
+explains why the information-related item received the highest mean compared with the
+more moderate scores for entertainment and curiosity. 
+
+These findings are consistent with
+the Technology Acceptance Model because they show that clear, useful, and accessible
+content supports user acceptance of the application. They also reinforce Heritage Values
+Theory by showing that players did not merely encounter digital scenery; instead, they
+engaged with landmark representations that conveyed cultural meaning and encouraged
+greater appreciation of Tinambac's heritage. They also support the reviewed literature
+on Laro ng Lahi-inspired and other localized heritage games, which argues that the use
+of culturally specific content can successfully build appreciation and awareness.
+Nevertheless, Salubako partially contrasts with some gamified tourism studies because
+its highest performance was in informational clarity rather than in entertainment depth
+or recommendation behavior, indicating that its present strength is as a heritage
+education and information tool first, and as a tourism engagement platform second.
 
 \section{Recommendations}
-Your contents here.
 
-%-----------------------------
-% References
-%-----------------------------
-\clearpage
-\printbibliography
+Based on the findings of this study, the following recommendations are proposed for further improvement on the delivery of the concept of using a gamified approach in cultural preservation and local tourism which was the foundation of "Salubako" as a gamified application.
+
+First, using virtual reality (VR) for further enhancement of both
+entertainment and immersion to the gamified approach. As well as choosing more landmarks
+to provide diversity for the player and adding a layer to tour length and
+interactiveness in consideration of each added landmark. Future versions may also assign
+distinct chapter goals per landmark, such as a civic-history task in the Municipio, a
+heritage trivia sequence in the church, and exploration-based collection tasks in the
+beach areas, so that each location offers a more memorable identity.
+
+Second, provide other means to disseminate
+information, such as using interactable signs, NPC interactions, and better exploration
+opportunities for the user or player. More specifically, the game may include optional
+NPC dialogue trees, collectible journal pages, landmark stamp cards, and short audio or
+text lore pop-ups that are unlocked after a player completes an objective in a location.
+
+Third, add side activities or characters that provide
+information on top of the main progression of the game. Place an option in the main
+menu for manual viewing of available relevant information about the landmarks
+incorporated in the game. For the 13+ age demographic, more suitable side activities may
+include clue-hunt quests, photo-matching challenges using real landmark images,
+dialog-based decision tasks, simple pattern or symbol puzzles tied to local culture, and
+timed but low-frustration exploration goals. Reward structures may also be improved by
+adding collectible badges, chapter completion stamps, unlockable character dialogue,
+cosmetic items, or an in-game heritage album that expands after each accomplished task.
+
+Lastly, the primary constraint on the
+entertainment factor was the player's enjoyment of the core game mechanics, such as
+puzzles and exploration, which received the weakest rating (mean 3.2). The mechanics
+themselves require refinement to maximize player satisfaction. Concretely, this may
+include replacing overly simple tasks with multi-step environmental puzzles, adding hint
+systems so younger players are not discouraged, introducing tiered rewards for full
+chapter completion, and designing short optional challenges that reward exploration
+without forcing excessive repetition.
 
 \clearpage
+
+% =========================================================
+% BIBLIOGRAPHY
+% =========================================================
+\phantomsection
+\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\printcategorizedbib
+
+\clearpage
+
+% =========================================================
+% CURRICULUM VITAE
+% =========================================================
+\phantomsection
 \chapter*{Curriculum Vitae}
+\addcontentsline{toc}{chapter}{Curriculum Vitae}
 
-Your curriculum vitae contents here. You may format it with sections such as:
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{cv_edglen.png}
+\end{center}
+
+\clearpage
+
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{cv_jethan.png}
+\end{center}
+
+\clearpage
+
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{cv_julius.png}
+\end{center}
+
+\clearpage
+
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{cv_hersan.png}
+\end{center}
+
+\clearpage
+
+\begin{center}
+  \includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{cv_micaiah.png}
+\end{center}
+
+\clearpage
+
+
+% =========================================================
+% APPENDICES
+% =========================================================
+\pagestyle{empty}
+\phantomsection
+\chapter*{Appendices}
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Appendices}
+
+
+
+
+
+% -------------------------------------------------------
+% PERMIT TO CONDUCT A STUDY
+% -------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{section}{Appendix A: Permit to Conduct a Study}
+
+\begin{center}
+  {\bfseries LETTER OF PERMISSION TO CONDUCT STUDY}
+\end{center}
+
+\vspace{1em}
+\noindent January 8, 2026\\
+Municipal Tourism Office\\
+Department of Tourism\\
+Binalay, Tinambac, Camarines Sur, 4426
+
+\vspace{1.5em}
+\noindent Dear Municipal Tourism Office of Tinambac,
+
+We are undergraduate students from the College of Computer Studies of Naga College
+Foundation, Inc., Naga City, respectfully seek your permission to conduct a capstone
+research study centered around the Municipality of Tinambac, Camarines Sur, entitled
+\textbf{``SALUBAKO: A GAMIFIED APPLICATION FOR CULTURAL PRESERVATION AND LOCAL TOURISM.''}
+
+This study, submitted in partial fulfillment of the Bachelor of Science in Information
+Systems, aims to develop and evaluate a gamified mobile application that promotes
+cultural heritage awareness and local tourism in Tinambac. The application features
+interactive, game-based exploration of key local landmarks: the Municipal Hall of
+Tinambac (Brgy. Binalay), St. Paschal Baylon Parish Church (Brgy. San Pascual),
+Caloco Beach (Brgy. Caloco), and Cagliliog Beach Resort (Brgy. Cagliliog).
+
+We humbly request your official permission to reference the municipality's landmarks,
+cultural heritage, and local identity within the application. All representations of
+Tinambac will be accurate, respectful, and in the best interest of the municipality. We
+remain open to any conditions your office may deem appropriate. We sincerely hope for
+your favorable consideration. Thank you for your time and support.
+
+\vspace{1.5em}
+\noindent Respectfully,
+
+\vspace{0.75em}
+\noindent Jethan Benedict M. Barcenas,\\
+Hersan Anthony P. San Agustin,\\
+Micaiah Philip M. San Miguel,\\
+Edglen P. Babar,\\
+Julius P. Pedimonte,\\
+The Researchers
+
+\clearpage
+
+% -------------------------------------------------------
+% SURVEY QUESTIONNAIRE
+% -------------------------------------------------------
+\phantomsection
+\addcontentsline{toc}{section}{Appendix B: Survey Questionnaire}
+
+\begin{center}
+  {\bfseries SURVEY QUESTIONNAIRE}
+\end{center}
+
+
+Please take a few minutes to complete this survey. Your feedback will help us understand
+the effectiveness of promoting the local tourism in the municipality of Tinambac through
+our capstone project entitled --- ``Project Salubako: A Gamified Tour Around Landmarks
+in Tinambac.''
+
+\textbf{Section 1: Demographic Information}
+
+\begin{enumerate}
+  \item Age \hspace{1em} $\circ$~13 to 17 \hspace{1em} $\circ$~18 and Above
+  \item Are you a student? \hspace{1em} $\circ$~Yes \hspace{1em} $\circ$~No
+  \item How often do you play video games?\\
+        $\circ$~Never \hspace{0.5em} $\circ$~Rarely \hspace{0.5em}
+        $\circ$~Occasionally \hspace{0.5em} $\circ$~Frequently \hspace{0.5em}
+        $\circ$~Very Frequent
+  \item What type of games do you usually play?\\
+        RPG \hspace{0.5em} FPS \hspace{0.5em} MOBA \hspace{0.5em}
+        Racing \hspace{0.5em} Sports \hspace{0.5em} Puzzle \hspace{0.5em}
+        Other: \underline{\hspace{3cm}}
+  \item Are you familiar with the municipality of Tinambac in Camarines Sur?\\
+        $\circ$~Yes \hspace{1em} $\circ$~No
+\end{enumerate}
+
+\vspace{0.25em}
+\textbf{Section 2: Player Experience}
+
+\noindent Please rate your agreement with the following statements regarding your
+experience playing ``Project Salubako.''\\
+\textit{1 --- Strongly Disagree \quad 2 --- Disagree \quad 3 --- Neutral \quad
+        4 --- Agree \quad 5 --- Strongly Agree}
+
+\begin{enumerate}
+  \item The game was engaging and fun to play.
+  \item The game effectively provided necessary entertainment.
+  \item The game mechanics (e.g., puzzles, exploration) were enjoyable.
+  \item The sound and music in the game contributed positively to the atmosphere.
+  \item The overall gameplay duration (1--2 hours) was appropriate.
+\end{enumerate}
+
+\vspace{0.25em}
+\textbf{Section 3: Knowledge and Awareness of Tinambac}
+
+\noindent Please rate your agreement with the following statements regarding your
+experience playing ``Project Salubako.''\\
+\textit{1 --- Strongly Disagree \quad 2 --- Disagree \quad 3 --- Neutral \quad
+        4 --- Agree \quad 5 --- Strongly Agree}
+
+\begin{enumerate}
+  \item The game provided clear and useful information about landmarks in Tinambac.
+  \item The game made me curious to learn more about Tinambac.
+  \item The incorporation of real-life settings made me appreciate the content more.
+  \item I learned new things about the culture and provincial life in Tinambac.
+  \item The game effectively showcased the unique views and natural beauty of Tinambac.
+\end{enumerate}
+
+\vspace{0.25em}
+\textbf{Section 4: Perceived Impact and Recommendation}
+
+\noindent Please rate your agreement with the following statements regarding your
+experience playing ``Project Salubako.''\\
+\textit{1 --- Strongly Disagree \quad 2 --- Disagree \quad 3 --- Neutral \quad
+        4 --- Agree \quad 5 --- Strongly Agree}
+
+\begin{enumerate}
+  \item Playing ``Project Salubako'' made me more interested in visiting Tinambac.
+  \item I believe this game could help promote tourism in Tinambac.
+  \item This game is a good example of how gamification can be used for cultural
+        preservation and tourism.
+  \item I would recommend ``Project Salubako'' to others interested in games, travel,
+        or Filipino culture.
+  \item What was the most enjoyable aspect of the game ``Project Salubako'' for you?
+        (Optional)\\[0.5em]
+        \underline{\hspace{\linewidth}}\\[0.3em]
+        \underline{\hspace{\linewidth}}
+\end{enumerate}
+
+
+
+% -------------------------------------------------------
+% Data Privacy Consent Form
+% -------------------------------------------------------
+\clearpage
+\phantomsection
+% \section*{Data Privacy Consent Form for Conducting Research Survey}
+\addcontentsline{toc}{section}{Appendix C: Data Privacy Consent Form for Conducting Research Survey}
+
+\begin{center}
+  {\bfseries Data Privacy Consent Form for Conducting Research Survey}
+
+  % PLACEHOLDER: Insert scanned image of Data Privacy Consent Form here.
+  \includegraphics[width=\textwidth]{images/consent_form.png}
+\end{center}
+
+% -------------------------------------------------------
+% System Design Survey Questionnaire
+% -------------------------------------------------------
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix D: System Design Survey Questionnaire}
+
+\begin{center}
+  {\bfseries System Design Survey Questionnaire}
+\end{center}
+
+\newlength{\swfullwidth}
+\newlength{\swcoli}
+\setlength{\swcoli}{0.60\textwidth}
+\setlength{\swfullwidth}{\dimexpr\swcoli + 10\tabcolsep + 6\arrayrulewidth + 0.270\textwidth\relax}
+
+\noindent\renewcommand{\arraystretch}{1.35}%
+\begin{longtable}{|p{\swcoli}|>{\centering\arraybackslash}p{0.054\textwidth}|>{\centering\arraybackslash}p{0.054\textwidth}|>{\centering\arraybackslash}p{0.054\textwidth}|>{\centering\arraybackslash}p{0.054\textwidth}|>{\centering\arraybackslash}p{0.054\textwidth}|}
+\hline
+\multicolumn{6}{|>{\columncolor[gray]{0.88}\bfseries\centering\arraybackslash}p{\swfullwidth}|}{SOFTWARE EVALUATION}\tabularnewline\hline
+%
+\multicolumn{6}{|p{\swfullwidth}|}{%
+  \parbox{\swfullwidth}{\vspace{0.3em}\textbf{Functionality}
+  \smallskip\par
+  This section assesses the game's core functionalities, progression, and sound/music components.
+  \smallskip\par
+  \hspace*{1.5em}1 -- Very Poor \quad 2 -- Poor \quad 3 -- Average \quad 4 -- Good \quad 5 -- Excellent\vspace{0.3em}}%
+}\tabularnewline\hline
+\multicolumn{1}{|>{\columncolor[gray]{0.88}\bfseries\centering\arraybackslash}p{\swcoli}|}{\textbf{Functionalities}}
+  & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\tabularnewline\hline
+Program Stability                         & & & & & \tabularnewline\hline
+Game Progression                          & & & & & \tabularnewline\hline
+Interactable Areas/NPCs                   & & & & & \tabularnewline\hline
+Sound and Music                           & & & & & \tabularnewline\hline
+Information Integration and Dissemination & & & & & \tabularnewline\hline
+%
+\multicolumn{6}{|p{\swfullwidth}|}{%
+  \parbox{\swfullwidth}{\vspace{0.3em}\textbf{Usability and Interface Design}
+  \smallskip\par
+  This section assesses the ease of use, navigation, and user-friendliness of the game, covering the user interface (UI), maps, and controls.
+  \smallskip\par
+  \hspace*{1.5em}1 -- Very Poor \quad 2 -- Poor \quad 3 -- Average \quad 4 -- Good \quad 5 -- Excellent\vspace{0.3em}}%
+}\tabularnewline\hline
+\multicolumn{1}{|>{\columncolor[gray]{0.88}\bfseries\centering\arraybackslash}p{\swcoli}|}{\textbf{Usability and UI}}
+  & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\tabularnewline\hline
+Navigation       & & & & & \tabularnewline\hline
+Map Clarity      & & & & & \tabularnewline\hline
+Screen Elements  & & & & & \tabularnewline\hline
+Input Feedback   & & & & & \tabularnewline\hline
+Accessibility    & & & & & \tabularnewline\hline
+%
+\multicolumn{6}{|p{\swfullwidth}|}{%
+  \parbox{\swfullwidth}{\vspace{0.3em}\textbf{Educational and Cultural Content}
+  \smallskip\par
+  This section evaluates how effectively the game communicates cultural heritage and educational content related to the landmarks and history of Tinambac, Camarines Sur.
+  \smallskip\par
+  \hspace*{1.5em}1 -- Very Poor \quad 2 -- Poor \quad 3 -- Average \quad 4 -- Good \quad 5 -- Excellent\vspace{0.3em}}%
+}\tabularnewline\hline
+\multicolumn{1}{|>{\columncolor[gray]{0.88}\bfseries\centering\arraybackslash}p{\swcoli}|}{\textbf{Educational Content}}
+  & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\tabularnewline\hline
+Accuracy of Cultural Information   & & & & & \tabularnewline\hline
+Clarity of Educational Narratives  & & & & & \tabularnewline\hline
+Integration of Local Heritage      & & & & & \tabularnewline\hline
+Relevance to Tinambac Landmarks    & & & & & \tabularnewline\hline
+Overall Educational Value          & & & & & \tabularnewline\hline
+%
+\multicolumn{6}{|p{\swfullwidth}|}{%
+  \parbox{\swfullwidth}{\vspace{0.3em}\textbf{Engagement and Game Experience}
+  \smallskip\par
+  This section measures the overall enjoyment, motivation, and immersive quality of the gaming experience.
+  \smallskip\par
+  \hspace*{1.5em}1 -- Very Poor \quad 2 -- Poor \quad 3 -- Average \quad 4 -- Good \quad 5 -- Excellent\vspace{0.3em}}%
+}\tabularnewline\hline
+\multicolumn{1}{|>{\columncolor[gray]{0.88}\bfseries\centering\arraybackslash}p{\swcoli}|}{\textbf{Engagement}}
+  & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\tabularnewline\hline
+Overall Enjoyment and Fun          & & & & & \tabularnewline\hline
+Motivation to Continue Playing     & & & & & \tabularnewline\hline
+Immersion and Story Engagement     & & & & & \tabularnewline\hline
+Replay Value                       & & & & & \tabularnewline\hline
+Cultural Interest Stimulated       & & & & & \tabularnewline\hline
+\end{longtable}
+\renewcommand{\arraystretch}{1}
+
+% -------------------------------------------------------
+% GAME DOCUMENT
+% PAGE 1 — Header + Info table + Game Overview
+% -------------------------------------------------------
+\clearpage
+\phantomsection
+% \section*{Game Document}
+\addcontentsline{toc}{section}{Appendix E: Game Document}
+
+\begin{center}
+  {\bfseries GAME DOCUMENT}
+\end{center}
+
+\vspace{0.25em}
+
+% Info table — dark header rows, light alternating rows
+\noindent
+\begin{tabularx}{\linewidth}{|>{\columncolor[gray]{0.85}}p{3.8cm}|X|}
+\hline
+Game Project         & SALUBAKO \\\hline
+Game Genre           & 2D, Top Down, Informative Puzzle RPG game \\\hline
+Platform             & PC \\\hline
+Game Developers      & Jethan Benedict Barcenas \newline
+                       Micaiah Philip San Miguel \newline
+                       Julius Pedimonte \newline
+                       Edglen Babar \newline
+                       Hersan Anthony San Agustin \\\hline
+Game Development Studio & Codie Beans \\\hline
+\multicolumn{2}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\linewidth}|}{Game Design Concepts} \\\hline
+\end{tabularx}
+
+\vspace{1em}
+
+\gdsection{Game Overview}
+
+\indent Salubako is a game wherein you go around specific places in Tinambac, a municipality
+in Camarines Sur, in which you travel from one place to another to familiarize yourself
+with the sceneries, take photos, and interact with locals within those places.
+
+\vspace{0.25em}
+\noindent\textbf{Target Audience:}
+\begin{itemize}
+  \item Age 13 and up
+  \item Players want to experience a glimpse of Bicol, specifically places in Tinambac
+  \item Players who loves 2D top-down RPG game
+\end{itemize}
+
+\gdsection{Game Objectives}
+
+\indent The objective of the game is to move around and explore the specific landmarks of
+Tinambac-inspired settings to provide an alternative way of promoting local tourism in
+a more interactive, entertaining, and informative manner.
+
+\noindent\textbf{Progression:} The game progresses by traversing through various parts of
+Tinambac to take photos of landmarks from the game's protagonist---Roberto. Each photo
+you take corresponds to a puzzle level you need to solve. Solved puzzles unlock more
+levels and progression throughout the game.
+
+\noindent\textbf{Puzzles:} Players traverse through different parts of Tinambac to solve
+various puzzles. Each puzzle corresponds to the picture of the real-life image. Solving
+various puzzles allows you to unlock the next landmark as well as game rewards.
+
+% -------------------------------------------------------
+% PAGE 2 — Reward system + Controls table + Game Features
+% -------------------------------------------------------
+
+\vspace{0.25em}
+\noindent\textbf{Reward system.} After completing puzzles, the player is rewarded with:
+\begin{enumerate}[label=\Alph*.]
+  \item Photo that is added to the collection that can be viewed within the
+        almanac/photobook-like inventory
+  \item Collect stars as scoring system
+  \item Important items that helps in game progression
+\end{enumerate}
+
+\vspace{0.75em}
+\begin{center}
+  \textbf{Control and Navigation Keys}
+\end{center}
+
+\noindent
+\begin{tabularx}{\linewidth}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{3.8cm}|X|}
+\hline
+Key            & \multicolumn{1}{>{\bfseries}l|}{Action} \\\hline
+\multicolumn{1}{|>{\columncolor{white}\centering\arraybackslash}p{3.8cm}|}{WASD}
+               & Up, Down, Left, Right \\\hline
+\multicolumn{1}{|>{\columncolor{white}\centering\arraybackslash}p{3.8cm}|}{Mouse / Cursor}
+               & Menu Interactions \\\hline
+\multicolumn{1}{|>{\columncolor{white}\centering\arraybackslash}p{3.8cm}|}{Spacebar / E}
+               & Interact \\\hline
+\multicolumn{1}{|>{\columncolor{white}\centering\arraybackslash}p{3.8cm}|}{Esc}
+               & Player Tab, Almanac, Map, Settings \\\hline
+\end{tabularx}
+
+\clearpage
+
+\vspace{1em}
+\begin{center}
+  \textbf{GAME FEATURES}
+\end{center}
+
+\noindent
+\begin{tabularx}{\linewidth}{|>{\bfseries\centering\arraybackslash}p{3.8cm}|X|}
+\hline
+\multicolumn{2}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\linewidth}|}{Core Gameplay Mechanics} \\\hline
+Basic Movement  & \textbf{Left/Right/Up/Down Movement:} Players can move left, right, up,
+                  and down using the arrow keys or joystick. \\\hline
+Interaction     & Players can interact with items and NPCs to progress within the game. \\\hline
+
+% -------------------------------------------------------
+% PAGE 3 — Game Features table continued
+% -------------------------------------------------------
+
+Puzzle          & Players can drag and drop pieces and objects to solve various puzzles
+                  throughout the game. \\\hline
+\multicolumn{2}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\linewidth}|}{Level Objectives} \\\hline
+Main Objective  & Completing the story by interacting with the different characters and
+                  completing the quests \\\hline
+Side Objective  & \begin{minipage}[t]{\linewidth}
+                    \vspace{0pt}
+                    \begin{itemize}[noitemsep,topsep=2pt]
+                      \item Minigames
+                      \item Photo Collection
+                    \end{itemize}
+                    \vspace{2pt}
+                  \end{minipage} \\\hline
+\multicolumn{2}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\linewidth}|}{User Interface (UI)} \\\hline
+Menu            & Display the player tab, inventory, map and the settings. \\\hline
+Dialog System   & Displays the dialog box on the bottom center part of the screen. \\\hline
+Puzzle Interface & Displays a puzzle interface upon triggering its event. \\\hline
+\multicolumn{2}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\linewidth}|}{Progression} \\\hline
+Story transition & Starting from prologue, exploring landmarks, until reaching the epilogue. \\\hline
+Map transition   & Moving from one landmark to another after finishing all of its main
+                   objectives. \\\hline
+Trigger Flags (for triggering an event) & Interacting with objects and NPCs which results
+                                          in game progression. \\\hline
+Interactable Area & Specific areas where it is important for completing the main objective
+                    within a landmark. \\\hline
+\multicolumn{2}{|>{\columncolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\linewidth}|}{Sound and Music} \\\hline
+Background Music (BGM) & Dynamic music that changes during certain scenes. \\\hline
+Sound Effects (SFX) & \begin{minipage}[t]{\linewidth}
+                        \vspace{0pt}
+                        \begin{itemize}[noitemsep,topsep=2pt]
+                          \item Menu selection
+                          \item Environment sounds
+                        \end{itemize}
+                        \vspace{2pt}
+                      \end{minipage} \\\hline
+\end{tabularx}
+
+% -------------------------------------------------------
+% PAGE 4 — Story Overview
+% -------------------------------------------------------
+
+\clearpage
+
+\begin{center}
+  {\large\bfseries Story Overview}
+\end{center}
+
+\indent The story revolves around the character named Roberto, a young Sewist that travels out
+of province to find employment opportunities and earn a better living for himself and
+his family. One day, he went on a vacation to his hometown in Bicol, Tinambac. Roberto
+comes and checks out his home barangay, Tamban for a while to catch up, and repair his
+motorcycle to travel around Tinambac. Photography is one of his long lost hobbies, on
+his vacation he decided to travel and take photos of memories from his vacations.
+
+\indent Traveling, he realized a lot of things he had missed out on his own home place that he
+had never explored. From mundane daily activities to its own simplistic beauty of
+provincial experience.
+
+\indent Roberto's roadtrips allow him to see through travel experiences and realizations of
+things we missed on our journey, literally and figuratively. At the end of the game, it
+would allow you to browse through and check out various photos you have taken
+throughout. This would allow you to see the endings of the mini stories you have ended
+with the people you have met throughout the journey.
+
+% -------------------------------------------------------
+% PAGE 5 — Character Preview: Roberto + start of NPC table
+% -------------------------------------------------------
+
+% Character Preview table — single unified tabular
+\noindent
+\begin{tabular}{|>{\centering\arraybackslash}p{0.37\linewidth}|>{\centering\arraybackslash}p{0.55\linewidth}|}
+\hline
+\multicolumn{2}{|>{\cellcolor[gray]{0.3}\color{white}\bfseries\centering\arraybackslash}p{\dimexpr0.92\linewidth+2\tabcolsep+\arrayrulewidth}|}{Character Preview} \\\hline
+\multicolumn{2}{|>{\cellcolor[gray]{0.5}\bfseries\arraybackslash}p{\dimexpr0.92\linewidth+2\tabcolsep+\arrayrulewidth}|}{Character Design: Roberto, main character} \\\hline
+Character Concept & Sprites \\\hline
+\includegraphics[height=5.5cm]{images/game_document/image48.png} &
+  \begin{tabular}[t]{@{}c@{}}
+    \includegraphics[width=\linewidth]{images/game_document/image54.png}\\[0.3em]
+    \includegraphics[width=\linewidth]{images/game_document/image51.png}
+  \end{tabular} \\\hline
+\end{tabular}
+
+\vspace{1em}
+
+% NPC Designs table — starts here, continues on page 6
+\noindent
+\begin{tabularx}{\linewidth}{|>{\centering\arraybackslash}p{2.4cm}|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+\hline
+ & \multicolumn{2}{c|}{\cellcolor[gray]{0.75}\textbf{NPC Designs}} \\\hline
+\textbf{Character name} & \textbf{portrait Concept} & \textbf{Sprite} \\\hline
+Rhona &
+  \includegraphics[height=2.8cm]{images/game_document/image40.png} &
+  \includegraphics[width=\linewidth]{images/game_document/image57.png} \\\hline
+
+% -------------------------------------------------------
+% PAGE 6 — NPC table continued
+% -------------------------------------------------------
+
+Bogs, Roberto's boss &
+  \includegraphics[height=2.8cm]{images/game_document/image56.png} &
+  \includegraphics[width=\linewidth]{images/game_document/image11.png} \\\hline
+Christian &
+  \begin{tabular}{@{}c@{}}
+    \includegraphics[height=2.5cm]{images/game_document/image10.png}\\[0.2em]
+    \includegraphics[height=2.5cm]{images/game_document/image19.png}
+  \end{tabular} &
+  \includegraphics[width=\linewidth]{images/game_document/image39.png} \\\hline
+Corin &
+  \begin{tabular}{@{}c@{}}
+    \includegraphics[height=2.5cm]{images/game_document/image33.png}\\[0.2em]
+    \includegraphics[height=2.5cm]{images/game_document/image7.png}
+  \end{tabular} &
+  \includegraphics[width=\linewidth]{images/game_document/image21.png} \\\hline
+Cora &
+  \includegraphics[height=2.8cm]{images/game_document/image13.png} &
+  \includegraphics[width=\linewidth]{images/game_document/image53.png} \\\hline
+Teresa &
+  \begin{tabular}{@{}c@{}}
+    \includegraphics[height=2.5cm]{images/game_document/image17.png}\\[0.2em]
+    \includegraphics[height=2.5cm]{images/game_document/image8.png}
+  \end{tabular} &
+  \includegraphics[width=\linewidth]{images/game_document/image31.png} \\\hline
+\end{tabularx}
+
+% -------------------------------------------------------
+% PAGES 7–11 — Tilesets table
+% -------------------------------------------------------
+
+\clearpage
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|>{\raggedright\arraybackslash}p{2.8cm}|}
+\hline
+\multicolumn{1}{|>{\columncolor[gray]{0.75}\bfseries\centering\arraybackslash}X|}{\textbf{Tilesets}} &
+\multicolumn{1}{>{\columncolor[gray]{0.75}\bfseries\centering\arraybackslash}p{2.8cm}|}{\textbf{Usage}} \\\hline
+% Row 1: Prologue / workplace tileset (image18, image15, image35, image30, image24)
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.38\linewidth]{images/game_document/image18.png}\hfill
+  \includegraphics[width=0.22\linewidth]{images/game_document/image15.png}\hfill
+  \includegraphics[width=0.36\linewidth]{images/game_document/image35.png}\\[4pt]
+  \includegraphics[width=0.3\linewidth]{images/game_document/image30.png}\hfill
+  \includegraphics[width=0.66\linewidth]{images/game_document/image24.png}
+  \vspace{4pt}
+\end{minipage} &
+\textbf{Prologue tilemaps}, in which used for hospital room and worplace setting \\\hline
+% Row 2: Textile shop items (image1, image14, image43, image4, image38, image20, image44, image3)
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.04\linewidth]{images/game_document/image1.png}\hspace{2pt}
+  \includegraphics[width=0.04\linewidth]{images/game_document/image14.png}\hspace{2pt}
+  \includegraphics[width=0.04\linewidth]{images/game_document/image43.png}\hspace{6pt}
+  \includegraphics[width=0.38\linewidth]{images/game_document/image3.png}\hspace{6pt}
+  \includegraphics[width=0.1\linewidth]{images/game_document/image44.png}\\[4pt]
+  \includegraphics[height=4cm]{images/game_document/image4.png}\hspace{6pt}
+  \includegraphics[width=0.12\linewidth]{images/game_document/image38.png}\hspace{6pt}
+  \includegraphics[width=0.42\linewidth]{images/game_document/image20.png}
+  \vspace{4pt}
+\end{minipage} & \\\hline
+% Row 3: Small misc (image23 trees section placeholder — large image displayed scaled)
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.62\linewidth]{images/game_document/image22.png}
+  \vspace{4pt}
+\end{minipage} & \\\hline
+\end{tabularx}
+
+% Beach Set row
+\noindent
+\begin{tabularx}{\linewidth}{|X|>{\raggedright\arraybackslash}p{2.8cm}|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.65\linewidth]{images/game_document/image16.png}\hfill
+  \includegraphics[height=3.5cm]{images/game_document/image4.png}
+  \vspace{4pt}
+\end{minipage} & Beach Set \\\hline
+% Grass/grounds/tree tiles — image23 (trees grid), image5
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.46\linewidth]{images/game_document/image5.png}\hfill
+  \includegraphics[height=3.5cm]{images/game_document/image4.png}
+  \vspace{4pt}
+\end{minipage} & Grass, grounds, and tree tiles \\\hline
+\end{tabularx}
+
+% Tree grid (image23 large)
+\noindent
+\begin{tabularx}{\linewidth}{|X|>{\raggedright\arraybackslash}p{2.8cm}|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.62\linewidth]{images/game_document/image23.png}
+  \vspace{4pt}
+\end{minipage} & \\\hline
+\end{tabularx}
+
+% Municipio / church / buildings set
+\noindent
+\begin{tabularx}{\linewidth}{|X|>{\raggedright\arraybackslash}p{2.8cm}|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.42\linewidth]{images/game_document/image6.png}
+  \vspace{4pt}
+\end{minipage} & Municipio, church, and buildings set \\\hline
+% image25 — buildings continuation
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=0.6\linewidth]{images/game_document/image25.png}
+  \vspace{4pt}
+\end{minipage} & \\\hline
+% image50 — large building/church exteriors  
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[height=7cm]{images/game_document/image50.png}
+  \vspace{4pt}
+\end{minipage} & \\\hline
+\end{tabularx}
+
+% -------------------------------------------------------
+% PAGE 12 — UI Elements, Graphics
+% -------------------------------------------------------
+
+\clearpage
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\cellcolor[gray]{0.75} UI elements, Graphics \\\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=\linewidth]{images/game_document/image41.png}
+  \vspace{4pt}
+\end{minipage} \\\hline
+\end{tabularx}
+
+% -------------------------------------------------------
+% PAGES 13–18 — Game Overview, Screenshots
+% -------------------------------------------------------
+
+\vspace{0.25em}
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\cellcolor[gray]{0.75} Game overview, Screenshots \\\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=\linewidth]{images/game_document/image36.png}\\[4pt]
+  \includegraphics[width=\linewidth]{images/game_document/image42.png}
+  \vspace{4pt}
+\end{minipage} \\\hline
+\end{tabularx}
+
+\vspace{0.25em}
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=\linewidth]{images/game_document/image26.png}\\[4pt]
+  \includegraphics[width=\linewidth]{images/game_document/image49.png}
+  \vspace{4pt}
+\end{minipage} \\\hline
+\end{tabularx}
+
+\vspace{0.25em}
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=\linewidth]{images/game_document/image46.png}\\[4pt]
+  \includegraphics[width=\linewidth]{images/game_document/image52.png}
+  \vspace{4pt}
+\end{minipage} \\\hline
+\end{tabularx}
+
+\vspace{0.25em}
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \includegraphics[width=\linewidth]{images/game_document/image34.png}\\[4pt]
+  \centering\includegraphics[width=0.75\linewidth]{images/game_document/image32.png}
+  \vspace{4pt}
+\end{minipage} \\\hline
+\end{tabularx}
+
+\vspace{0.25em}
+
+\noindent
+\begin{tabularx}{\linewidth}{|X|}
+\hline
+\begin{minipage}[t]{\linewidth}
+  \vspace{4pt}
+  \centering\includegraphics[width=0.75\linewidth]{images/game_document/image55.png}\\[4pt]
+  \centering\includegraphics[width=0.75\linewidth]{images/game_document/image27.png}\\[4pt]
+  \centering\includegraphics[width=0.75\linewidth]{images/game_document/image47.png}
+  \vspace{4pt}
+\end{minipage} \\\hline
+\end{tabularx}
+
+% -------------------------------------------------------
+% Game Algorithm
+% -------------------------------------------------------
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Appendix F: Game Algorithm}
+
+\begin{center}
+  {\bfseries APPENDIX F}\\[1em]
+  {\bfseries System Algorithms}
+\end{center}
+
+\vspace{1em}
+{\small
+
+\noindent\textbf{Algorithm 1: Overall Game Flow}\par
+\noindent\rule{\textwidth}{0.4pt}
+\noindent\textbf{Input:} \textit{playerInput, saveData, sceneTriggers, questData}\par
+\noindent\textbf{Output:} \textit{gameState, loadedScene, updatedQuestProgress}\par
+\noindent\rule{\textwidth}{0.4pt}
+\begin{enumerate}[leftmargin=0.75cm, topsep=2pt, itemsep=0pt, parsep=0pt]
+  \item \textbf{INITIALIZE} gameState, save profile, questData, and current scene
+  \item \textbf{DISPLAY} main menu and available save slots
+  \item \textbf{IF} player selects New Game \textbf{THEN} create initial saveData and load prologue scene
+  \item \textbf{ELSE IF} player selects Continue \textbf{THEN} load saved scene and quest progress
+  \item \textbf{WHILE} game is running \textbf{DO}
+  \item \hspace{0.4cm}\textbf{PROCESS} player input, movement, nearby interactables, dialogue, quests, minigames, and UI updates
+  \item \hspace{0.4cm}\textbf{IF} scene trigger is entered and confirmed \textbf{THEN} load target scene
+  \item \hspace{0.4cm}\textbf{IF} quest objective is completed \textbf{THEN} update quest progress and unlock next marker, item, dialogue, trigger, or scene
+  \item \hspace{0.4cm}\textbf{IF} minigame starts \textbf{THEN} disable normal movement, run minigame rules, show result, and return to story scene
+  \item \textbf{END WHILE}
+  \item \textbf{RETURN} gameState, loadedScene, and updatedQuestProgress
+\end{enumerate}
+
+\vspace{0.75cm}
+\noindent\textbf{Algorithm 2: Player Movement and Interaction System}\par
+\noindent\rule{\textwidth}{0.4pt}
+\noindent\textbf{Input:} \textit{movementInput, interactionInput, playerPosition}\par
+\noindent\textbf{Output:} \textit{updatedPlayerPosition, interactionState}\par
+\noindent\rule{\textwidth}{0.4pt}
+\begin{enumerate}[leftmargin=0.75cm, topsep=2pt, itemsep=0pt, parsep=0pt]
+  \item \textbf{INITIALIZE} Rigidbody2D, Animator, facingDirection, and canMove $\leftarrow$ true
+  \item \textbf{EVERY FRAME} read movementInput and interactionInput
+  \item \textbf{IF} canMove is false \textbf{THEN} stop velocity, disable walk animation, and skip movement update
+  \item \textbf{NORMALIZE} movement direction and compute velocity using moveSpeed
+  \item \textbf{UPDATE} Rigidbody2D velocity and animator direction values
+  \item \textbf{IF} horizontal direction changes \textbf{THEN} flip player sprite on the X axis
+  \item \textbf{IF} interactionInput is pressed and current interactable exists \textbf{THEN} validate conditions and run interaction event
+  \item \textbf{RETURN} updatedPlayerPosition and interactionState
+\end{enumerate}
+
+\vspace{0.75cm}
+\noindent\textbf{Algorithm 3: Dialogue System}\par
+\noindent\rule{\textwidth}{0.4pt}
+\noindent\textbf{Input:} \textit{NPCData, dialogueLines, playerInteraction}\par
+\noindent\textbf{Output:} \textit{dialogueDisplay, dialogueProgress}\par
+\noindent\rule{\textwidth}{0.4pt}
+\begin{enumerate}[leftmargin=0.75cm, topsep=2pt, itemsep=0pt, parsep=0pt]
+  \item \textbf{CHECK} NPCData when playerInteraction occurs
+  \item \textbf{IF} NPC has no dialogue data \textbf{THEN} stop interaction
+  \item \textbf{IF} dialogue is already active \textbf{THEN} advance to the next dialogue line
+  \item \textbf{ELSE} set dialogueActive $\leftarrow$ true, dialogueIndex $\leftarrow$ 0, and disable player movement
+  \item \textbf{DISPLAY} dialogue panel and current dialogue line
+  \item \textbf{FOR EACH} character in current dialogue line \textbf{DO} append character to dialogue text using typing delay
+  \item \textbf{IF} more dialogue lines exist \textbf{THEN} display next line
+  \item \textbf{ELSE} hide dialogue panel and enable player movement
+  \item \textbf{RETURN} dialogueDisplay and dialogueProgress
+\end{enumerate}
+
+\vspace{0.75cm}
+\noindent\textbf{Algorithm 4: Quest System}\par
+\noindent\rule{\textwidth}{0.4pt}
+\noindent\textbf{Input:} \textit{questID, playerAction, questProgress}\par
+\noindent\textbf{Output:} \textit{updatedQuest, rewardStatus}\par
+\noindent\rule{\textwidth}{0.4pt}
+\begin{enumerate}[leftmargin=0.75cm, topsep=2pt, itemsep=0pt, parsep=0pt]
+  \item \textbf{LOAD} quest save data and initialize active quest list
+  \item \textbf{WHEN} player interacts with quest NPC, check active quest state
+  \item \textbf{IF} quest objective is incomplete \textbf{THEN} display quest dialogue and advance quest progress
+  \item \textbf{IF} quest reaches final stage \textbf{THEN} mark quest completed, give reward, and unlock next quest or area
+  \item \textbf{SAVE} updated quest data
+  \item \textbf{RETURN} updatedQuest and rewardStatus
+\end{enumerate}
+
+\vspace{0.75cm}
+\noindent\textbf{Algorithm 5: Scene Transition System}\par
+\noindent\rule{\textwidth}{0.4pt}
+\noindent\textbf{Input:} \textit{playerPosition, transitionTrigger, targetScene}\par
+\noindent\textbf{Output:} \textit{loadedScene, playerSpawnPosition}\par
+\noindent\rule{\textwidth}{0.4pt}
+\begin{enumerate}[leftmargin=0.75cm, topsep=2pt, itemsep=0pt, parsep=0pt]
+  \item \textbf{DETECT} player collision with transitionTrigger
+  \item \textbf{IF} collision is detected \textbf{THEN} display transition prompt
+  \item \textbf{IF} player confirms transition \textbf{THEN} save current data, start fade transition, load targetScene, and set spawn position
+  \item \textbf{RETURN} loadedScene and playerSpawnPosition
+\end{enumerate}
+
+\vspace{0.75cm}
+\noindent\textbf{Algorithm 6: Collection Minigame System}\par
+\noindent\rule{\textwidth}{0.4pt}
+\noindent\textbf{Input:} \textit{collectibleObjects, timerValue, playerInteraction}\par
+\noindent\textbf{Output:} \textit{gameResult, collectedItemCount}\par
+\noindent\rule{\textwidth}{0.4pt}
+\begin{enumerate}[leftmargin=0.75cm, topsep=2pt, itemsep=0pt, parsep=0pt]
+  \item \textbf{INITIALIZE} collectedItemCount $\leftarrow$ 0 and display minigame instruction panel
+  \item \textbf{START} countdown timer and enable player movement
+  \item \textbf{WHILE} minigame is active \textbf{DO} decrease timerValue and update timer display
+  \item \textbf{IF} player collects an item \textbf{THEN} increase collectedItemCount and update item counter UI
+  \item \textbf{IF} all collectibleObjects are collected \textbf{THEN} end game with WIN result
+  \item \textbf{IF} timerValue reaches zero \textbf{THEN} end game with LOSE result
+  \item \textbf{RETURN} gameResult and collectedItemCount
+\end{enumerate}
+}
+
+% -------------------------------------------------------
+% Responsibilities of a Thesis Adviser
+% -------------------------------------------------------
+% \clearpage
+% \phantomsection
+% \section*{Responsibilities of a Thesis Adviser}
+% \addcontentsline{toc}{section}{Responsibilities of a Thesis Adviser}
+
+% \begin{center}
+%   {\bfseries Responsibilities of a Thesis Adviser}
+
+%   % PLACEHOLDER: Insert scanned image of Thesis Adviser responsibilities form here.
+%   \includegraphics[width=\textwidth]{images/responsibilities.png}
+% \end{center}
 
 \end{document}
